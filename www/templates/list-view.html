@@ -1,0 +1,21 @@
+<ion-view view-title='Street-list'>
+  <ion-nav-bar class='bar-calm'></ion-nav-bar>
+  <ion-nav-buttons side='primary'>
+    <a class='button button-icon icon ion-ios7-location-outline' nav-direction='back' href='#/map-view'></a>
+  </ion-nav-buttons>
+  <ion-nav-buttons side='secondary'>
+    <a class='button button-clear icon-right ion-information-circled' nav-direction='forward' href='#/menu'></a>
+  </ion-nav-buttons>
+  <ion-content>
+    <div>
+      <ion-list>
+        <ion-item class='item-calm' ng-repeat='street in streets'>
+          <div class="street-item">
+            <button class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld()"></button>
+            <span>{{street.name}}</span>
+            <a class="button button-icon ion-chevron-right" nav-direction='back' ng-click="singlePostNew()"></a>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

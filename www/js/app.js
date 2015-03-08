@@ -30,21 +30,41 @@ angular.module('kazimir', ['ionic'])
     }
   })
   
-  .state('new', {
-    url: '/new',
+  .state('list-view', {
+    url: '/list-view',
     views: {
       'container-view': {
-        templateUrl: 'templates/new.html',
+        templateUrl: 'templates/list-view.html',
+        controller: 'StreetsController'
+      }
+    }
+  })
+
+  .state('map-view', {
+    url: '/map-view',
+    views: {
+      'container-view': {
+        templateUrl: 'templates/map-view.html',
         controller: 'StreetsController'
       }
     }
   })
   
-  .state('old', {
-    url: '/old',
+  .state('single-old', {
+    url: '/single-old',
     views: {
       'container-view': {
-        templateUrl: 'templates/old.html',
+        templateUrl: 'templates/single-old.html',
+        controller: 'StreetsController'
+      }
+    }
+  })
+
+  .state('single-new', {
+    url: '/single-new',
+    views: {
+      'container-view': {
+        templateUrl: 'templates/single-new.html',
         controller: 'StreetsController'
       }
     }
@@ -53,9 +73,11 @@ angular.module('kazimir', ['ionic'])
   $urlRouterProvider.otherwise('/menu');
 })
 
-.controller('StreetsController', function($scope) {
+.controller('StreetsController', function($scope, $state) {
   $scope.streets = [
-    { name: 'Krakowska' },
+    { name: 'Krakowska',
+      title: 'Ulica Krakowska',
+      description: 'Lorem Ipsum' },
     { name: 'Plac Nowy' },
     { name: 'Starowiślna' },
     { name: 'Podbrzezie' },
@@ -73,5 +95,11 @@ angular.module('kazimir', ['ionic'])
     var container = document.getElementsByClassName('container');
     container = angular.element(container);
     container.toggleClass('flipped');
+  };
+  $scope.singlePostOld = function() {
+    $state.go('single-old');
+  };
+  $scope.singlePostNew = function() {
+    $state.go('single-new');
   };
 });

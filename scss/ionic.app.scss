@@ -20,7 +20,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-
 .flipper {
   -webkit-perspective: 800px;
      -moz-perspective: 800px;
@@ -73,4 +72,41 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
      -moz-transform: translateX( -100% ) rotateY( -180deg );
        -o-transform: translateX( -100% ) rotateY( -180deg );
           transform: translateX( -100% ) rotateY( -180deg );
+}
+.bar-header {
+  background-color: #70bf4c;
+}
+.button-container {
+  height:70px; 
+  position:fixed; 
+  top:300px;
+  left:0px;
+  right:0px;
+  text-align: center;
+  vertical-align: middle;
+}
+.street-item {
+  text-align: center;
+  .button {
+    min-height: 30px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    &:before {
+      position:relative;
+      bottom: 6px;
+    }
+  }
+  .ion-chevron-left {
+    float: left;
+    background-color: #0bafde;
+  }
+  .ion-chevron-right {
+    float: right;
+    background-color: #70bf4c;
+  }
+  span {
+    position: relative;
+    top: 10px;
+  }
 }

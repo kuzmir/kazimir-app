@@ -7062,3 +7062,35 @@ a.button {
   -moz-transform: translateX(-100%) rotateY(-180deg);
   -o-transform: translateX(-100%) rotateY(-180deg);
   transform: translateX(-100%) rotateY(-180deg); }
+
+.bar-header {
+  background-color: #70bf4c; }
+
+.button-container {
+  height: 70px;
+  position: fixed;
+  top: 300px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  vertical-align: middle; }
+
+.street-item {
+  text-align: center; }
+  .street-item .button {
+    min-height: 30px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%; }
+    .street-item .button:before {
+      position: relative;
+      bottom: 6px; }
+  .street-item .ion-chevron-left {
+    float: left;
+    background-color: #0bafde; }
+  .street-item .ion-chevron-right {
+    float: right;
+    background-color: #70bf4c; }
+  .street-item span {
+    position: relative;
+    top: 10px; }

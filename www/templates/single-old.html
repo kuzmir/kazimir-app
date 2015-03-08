@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-nav-bar class='bar-calm'></ion-nav-bar>
+  <ion-nav-buttons side='secondary'>
+    <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' href='#/list-view'>BACK</a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class='flipper'>
+      <div class='container flipped'>
+        <div class='front'>
+          <div style="height: 800px; background-color: #999999;">
+            <h3>text new</h3>
+          </div>
+          
+        </div>
+        <div class='back'>
+          
+          <div style="height: 800px; background-color: #eee;">
+            <h3>text old</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='button-container'> 
+      <a class='button button-icon' id="toggleButton" ng-click='rotate()'>click</a>  
+    </div>
+   
+  </ion-content>
+</ion-view>
