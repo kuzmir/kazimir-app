@@ -51,7 +51,7 @@ angular.module('kazimir', ['ionic'])
   })
   
   .state('single-old', {
-    url: '/single-old',
+    url: '/streets/:id',
     views: {
       'container-view': {
         templateUrl: 'templates/single-old.html',
@@ -69,16 +69,18 @@ angular.module('kazimir', ['ionic'])
       }
     }
   })
-  
+ 
   $urlRouterProvider.otherwise('/menu');
 })
 
 .controller('StreetsController', function($scope, $state) {
   $scope.streets = [
-    { name: 'Krakowska',
+    { id: 0,
+      name: 'Krakowska',
       title: 'Ulica Krakowska',
       description: 'Lorem Ipsum' },
-    { name: 'Plac Nowy' },
+    { id:1,
+      name: 'Plac Nowy' },
     { name: 'Starowiślna' },
     { name: 'Podbrzezie' },
     { name: 'Krakowska' },
@@ -96,7 +98,10 @@ angular.module('kazimir', ['ionic'])
     container = angular.element(container);
     container.toggleClass('flipped');
   };
-  $scope.singlePostOld = function() {
+  
+  $scope.singlePostOld = function(street) {
+    $scope.street = street;
+    console.log(street);
     $state.go('single-old');
   };
   $scope.singlePostNew = function() {

@@ -10,6 +10,8 @@
         <div class='front'>
           <div style="height: 800px; background-color: #999999;">
             <h3>text new</h3>
+            {{scope.street.name}}
+            {{selectedStreet.description}}
           </div>
           
         </div>
@@ -17,6 +19,7 @@
           
           <div style="height: 800px; background-color: #eee;">
             <h3>text old</h3>
+            <span ng-model="item">{{street.name}}</span>
           </div>
         </div>
       </div>

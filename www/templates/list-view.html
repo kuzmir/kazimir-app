@@ -4,16 +4,17 @@
     <a class='button button-icon icon ion-ios7-location-outline' nav-direction='back' href='#/map-view'></a>
   </ion-nav-buttons>
   <ion-nav-buttons side='secondary'>
-    <a class='button button-clear icon-right ion-information-circled' nav-direction='forward' href='#/menu'></a>
+    <a class='button button-clear icon-right ion-information-circled' nav-direction='back' href='#/menu'></a>
   </ion-nav-buttons>
   <ion-content>
     <div>
       <ion-list>
         <ion-item class='item-calm' ng-repeat='street in streets'>
           <div class="street-item">
-            <button class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld()"></button>
-            <span>{{street.name}}</span>
+            <button class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></button>
+            <span ng-model="item">{{street.name}}</span>
             <a class="button button-icon ion-chevron-right" nav-direction='back' ng-click="singlePostNew()"></a>
+          </div>
         </ion-item>
       </ion-list>
     </div>
