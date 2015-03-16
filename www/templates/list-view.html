@@ -1,4 +1,4 @@
-<ion-view view-title='Street-list'>
+<ion-view view-title='Street-list' ng-controller="StreetController">
   <ion-nav-bar class='bar-calm'></ion-nav-bar>
   <ion-nav-buttons side='primary'>
     <a class='button button-icon icon ion-ios7-location-outline' nav-direction='back' href='#/map-view'></a>
@@ -11,7 +11,7 @@
       <ion-list>
         <ion-item class='item-calm' ng-repeat='street in streets'>
           <div class="street-item">
-            <button class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></button>
+            <a href="#/streets/{{street.id}}" class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></a>
             <span ng-model="item">{{street.name}}</span>
             <a class="button button-icon ion-chevron-right" nav-direction='back' ng-click="singlePostNew()"></a>
           </div>
