@@ -7134,10 +7134,15 @@ a.button {
   text-align: center; }
 
 .logo {
-  height: 400px; }
+  height: 400px;
+  padding: 20px; }
   .logo img, .logo p {
     position: relative;
-    top: 120px; }
+    top: 80px; }
+  .logo img {
+    width: 100%; }
+  .logo p {
+    top: 100px; }
 
 .kazimir-go .kazimir-button {
   width: 150px;
