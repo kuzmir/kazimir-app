@@ -10,14 +10,32 @@
         <div class='front'>
           <div style="height: 800px; background-color: #999999;">
             <h3>New</h3>
+
             <h3>{{street.name}}</h3>
             <div>{{street.description}}</div>
           </div>
           
         </div>
         <div class='back'> 
-          <div>
+          <div class="single-content">
             <h3>Old</h3>
+            <div class="slider">
+              <ion-slide-box on-slide-changed="slideChanged(index)">
+                <ion-slide>
+                  <div id="logo">
+                    <img src="http://code.ionicframework.com/assets/img/app_icon.png">
+                  </div>
+                </ion-slide>
+                <ion-slide>
+                  <h3>Awesome</h3>
+                </ion-slide>
+                <ion-slide>
+                  <p>
+                    Cool
+                  </p>
+                </ion-slide>
+              </ion-slide-box>
+            </div>
             <h3>{{street.name}}</h3>
             <div>{{street.description}}</div>
           </div>

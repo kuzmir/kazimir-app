@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('kazimir', ['ionic'])
+var app = angular.module('kazimir', ['ionic', 'uiGmapgoogle-maps'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -45,7 +45,7 @@ var app = angular.module('kazimir', ['ionic'])
     views: {
       'container-view': {
         templateUrl: 'templates/map-view.html',
-        controller: 'StreetsController'
+        controller: 'MapCtrl'
       }
     }
   })
@@ -132,4 +132,10 @@ app.controller('StreetController', function($scope, $rootScope){
       container = angular.element(container);
       container.toggleClass('flipped');
     };
+    $scope.slideChanged = function(index) {
+      $scope.slideIndex = index;
+    };
+});
+app.controller('MapCtrl', function($scope, $rootScope){
+  $scope.map = { center: { latitude: 50.0467657, longitude: 20.0048731 }, zoom: 8 };
 });

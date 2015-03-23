@@ -1,4 +1,4 @@
-<ion-view view-title='Map-view'>
+<ion-view view-title='Map-view' ng-controller="MapCtrl">
   <ion-nav-bar class='bar-calm'></ion-nav-bar>
   <ion-nav-buttons side='primary'>
     <a class='button button-icon icon ion-ios7-paper-outline' nav-direction='back' href='#/list-view'></a>
@@ -7,10 +7,17 @@
     <a class='button button-clear icon-right ion-information-circled' nav-direction='back' href='#/menu'></a>
   </ion-nav-buttons>
   <ion-content>
-    <div>
-      <div style="height: 800px; background-color: #eee;">
-        <h3>map view</h3>
-      </div>
-    </div>
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    <ion-slide-box active-slide="activeSlide">
+      <ion-slide>
+        <div class="box blue"><h3>Slide example</h3></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow"><h3>Slide example</h3></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box pink"><h3>Slide example</h3></div>
+      </ion-slide>
+    </ion-slide-box>
   </ion-content>
 </ion-view>
