@@ -7094,36 +7094,6 @@ a.button {
     position: relative;
     top: 10px; }
 
-.slider {
-  height: 100%; }
-
-.slider-slide {
-  padding-top: 80px;
-  color: #000;
-  background-color: #fff;
-  text-align: center;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300; }
-
-#logo {
-  margin: 30px 0px; }
-
-#list {
-  width: 170px;
-  margin: 30px auto;
-  font-size: 20px; }
-
-#list ol {
-  margin-top: 30px; }
-
-#list ol li {
-  text-align: left;
-  list-style: decimal;
-  margin: 10px 0px; }
-
-.button.ng-hide {
-  display: none; }
-
 .angular-google-map-container {
   height: 400px; }
 
@@ -7132,6 +7102,10 @@ a.button {
 
 .logo, .kazimir-go {
   text-align: center; }
+
+.kazimir-go .kazimir-button {
+  width: 150px;
+  background-color: #fff; }
 
 .logo {
   height: 400px;
@@ -7144,6 +7118,9 @@ a.button {
   .logo p {
     top: 100px; }
 
-.kazimir-go .kazimir-button {
-  width: 150px;
-  background-color: #fff; }
+.title-left {
+  width: 50%; }
+  .title-left img {
+    width: 100%;
+    position: relative;
+    top: 8px; }

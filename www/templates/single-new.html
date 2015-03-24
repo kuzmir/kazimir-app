@@ -8,13 +8,17 @@
     <div class='flipper'>
       <div class='container flipped'>
         <div class='front'> 
-          <div style="height: 800px; background-color: #eee;">
-            <h3>text old</h3>
-          </div>
+          <div class="single-content">
+          <h3>Old</h3>
+            <h3>{{street.description.old.title}}</h3>
+            <div>{{street.description.old.text}}</div>
+          </div>    
         </div>
         <div class='back'>
-          <div style="height: 800px; background-color: #999999;">
-            <h3>text new</h3>
+         <div class="single-content">
+            <h3>New</h3>
+            <h3>{{street.description.after.title}}</h3>
+            <div>{{street.description.after.text}}</div>
           </div>
         </div>
       </div>

@@ -20,6 +20,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
 .flipper {
   -webkit-perspective: 1000;
      -moz-perspective: 1000;
@@ -111,40 +112,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     top: 10px;
   }
 }
-.slider {
-  height: 100%;
-}
-.slider-slide {
-  padding-top: 80px;
-  color: #000;
-  background-color: #fff;
-  text-align: center;
-
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-}
-
-#logo {
-  margin: 30px 0px;
-}
-
-#list {
-  width: 170px;
-  margin: 30px auto;
-  font-size: 20px;
-}
-#list ol {
-  margin-top: 30px;
-}
-#list ol li {
-  text-align: left;
-  list-style: decimal;
-  margin: 10px 0px;
-}
-
-.button.ng-hide{
-  display:none;
-}
+// Map view
 
 .angular-google-map-container { 
   height: 400px; 
@@ -152,9 +120,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .slider {
   height: 200px;
 }
+
+// Welcome screen
+
 .logo,
 .kazimir-go {
   text-align: center;
+}
+.kazimir-go {
+  .kazimir-button {
+    width: 150px;
+    background-color:#fff;
+  }
 }
 .logo {
   height: 400px;
@@ -171,9 +148,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     top: 100px;
   }
 }
-.kazimir-go {
-  .kazimir-button {
-    width: 150px;
-    background-color:#fff;
+
+// Header
+
+.title-left {
+  width: 50%;
+  img {
+    width: 100%;
+    position: relative;
+    top: 8px;
   }
 }
