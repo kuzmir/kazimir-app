@@ -9,16 +9,41 @@
       <div class='container flipped'>
         <div class='front'>
           <div class="single-content">
+            <ion-slide-box active-slide="activeSlide" class="post-slider">
+              <ion-slide>
+                <div class="box blue"><h3>Slide example</h3></div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box yellow"><h3>Slide example</h3></div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box pink"><h3>Slide example</h3></div>
+              </ion-slide>
+            </ion-slide-box>
             <h3>New</h3>
             <h3>{{street.description.after.title}}</h3>
             <div>{{street.description.after.text}}</div>
+            
           </div>         
         </div>
         <div class='back'> 
-          <div class="single-content">
+          <div class="single-content">         
+            <ion-slide-box active-slide="activeSlide" class="post-slider">
+              <ion-slide>
+                <div class="box blue"><h3>Slide example</h3></div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box yellow"><h3>Slide example</h3></div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box pink"><h3>Slide example</h3></div>
+              </ion-slide>
+            </ion-slide-box>
             <h3>Old</h3>
-            <h3>{{street.description.old.title}}</h3>
-            <div>{{street.description.old.text}}</div>
+            <div class="description">
+              <h3>{{street.description.old.title}}</h3>
+              <div>{{street.description.old.text}}</div>
+            </div>
           </div>
         </div>
       </div>

@@ -7034,7 +7034,7 @@ a.button {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d; }
 
-.flipper .container div {
+.flipper .container .front, .flipper .container .back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -7124,3 +7124,9 @@ a.button {
     width: 100%;
     position: relative;
     top: 8px; }
+
+.post-slider {
+  background-color: #eee; }
+
+.description {
+  top: 100px; }

@@ -43,14 +43,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 }
 
-.flipper .container div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-     -moz-backface-visibility: hidden;
-       -o-backface-visibility: hidden;
-          backface-visibility: hidden;
+.flipper .container {
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+         -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  
 }
 
 .flipper .container .front {
@@ -158,4 +162,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     position: relative;
     top: 8px;
   }
+}
+.post-slider {
+  background-color: #eee;
+}
+.description {
+  top: 100px;
 }
