@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('kazimir', ['ionic', 'uiGmapgoogle-maps'])
+var app = angular.module('kazimir', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -255,6 +255,33 @@ app.controller('StreetController', function($scope, $rootScope){
       $scope.slideIndex = index;
     };
 });
-app.controller('MapCtrl', function($scope, $rootScope){
-  $scope.map = { center: { latitude: 50.0467657, longitude: 20.0048731 }, zoom: 8 };
-});
+
+app.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
+  $scope.initialize = function() {
+    var myLatlng = new google.maps.LatLng(50.0467657,20.0048731);
+    
+    var mapOptions = {
+      center: myLatlng,
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map"),
+        mapOptions);
+
+
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Uluru (Ayers Rock)'
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
+
+    $scope.map = map;
+  }
+  //google.maps.event.addDomListener(window, 'load', initialize);
+
+  
+})

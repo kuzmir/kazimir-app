@@ -6,8 +6,8 @@
   <ion-nav-buttons side='secondary'>
     <a class='button button-clear icon-right ion-information-circled' nav-direction='back' href='#/menu'></a>
   </ion-nav-buttons>
-  <ion-content>
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+  <ion-content ng-controller="MapCtrl" ng-init="initialize()">
+    <div id="map" data-tap-disabled="true"></div>
     <ion-slide-box active-slide="activeSlide">
       <ion-slide>
         <div class="box blue"><h3>Slide example</h3></div>
