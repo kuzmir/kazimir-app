@@ -1,10 +1,7 @@
-<ion-view view-title='Map-view' ng-controller="MapCtrl">
-  <ion-nav-bar class='bar-calm'></ion-nav-bar>
+<ion-view title='<img class="title-image" src="img/kazimir_logotype.svg" />' ng-controller="MapCtrl">
+  <ion-nav-bar class='list-bar'></ion-nav-bar>
   <ion-nav-buttons side='primary'>
-    <a class='button button-icon icon ion-ios7-paper-outline' nav-direction='back' href='#/list-view'></a>
-  </ion-nav-buttons>
-  <ion-nav-buttons side='secondary'>
-    <a class='button button-clear icon-right ion-information-circled' nav-direction='back' href='#/menu'></a>
+    <a class='button button-icon icon custom-icon' nav-direction='back' href='#/list-view'><img src="img/icon_list.svg"></a>
   </ion-nav-buttons>
   <ion-content ng-controller="MapCtrl" ng-init="initialize()">
     <div id="map" data-tap-disabled="true"></div>

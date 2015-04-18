@@ -3,6 +3,7 @@ angular.module('streets.controllers', [])
   $scope.streets = [
     { id: 0,
       name: 'Krakowska',
+      src : 'img/foto_krakowska.png',
       description: {
         old: {
           title: 'Old Ulica Krakowska',
@@ -16,6 +17,7 @@ angular.module('streets.controllers', [])
     },
     { id:1,
       name: 'Plac Nowy',
+      src : 'img/foto_placnowy.png',
       description: {
         old: {
           title: 'Old Plac Nowy',
@@ -28,20 +30,22 @@ angular.module('streets.controllers', [])
       },
     },
     { id:2,
-      name: 'Starowiślna',
+      name: 'Brzozowa',
+      src : 'img/foto_brzozowa.png',
       description: {
         old: {
-          title: 'Old Starowiślna',
-          text: 'Old Lorem Ipsum Starowiślna',
+          title: 'Old Brzozowa',
+          text: 'Old Lorem Ipsum Brzozowa',
         },
         after: {
-          title: 'New Starowiślna',
-          text: 'New Lorem Ipsum Starowiślna',
+          title: 'New Brzozowa',
+          text: 'New Lorem Ipsum Brzozowa',
         }
       },
     },
     { id:3,
       name: 'Podbrzezie',
+      src : 'img/foto_krakowska.png',
       description: {
         old: {
           title: 'Old Podbrzezie',
@@ -55,6 +59,7 @@ angular.module('streets.controllers', [])
     },
     { id: 4,
       name: 'Krakowska',
+      src : 'img/foto_placnowy.png',
       description: {
         old: {
           title: 'Old Krakowska',
@@ -68,6 +73,7 @@ angular.module('streets.controllers', [])
     },
     { id:5,
       name: 'Plac Nowy',
+      src : 'img/foto_brzozowa.png',
       description: {
         old: {
           title: 'Old Plac Nowy',
@@ -81,6 +87,7 @@ angular.module('streets.controllers', [])
     },
     { id:6,
       name: 'Starowiślna',
+      src : 'img/foto_krakowska.png',
       description: {
         old: {
           title: 'Old Starowiślna',
@@ -94,6 +101,7 @@ angular.module('streets.controllers', [])
     },
     { id:7,
       name: 'Podbrzezie',
+      src : 'img/foto_placnowy.png',
       description: {
         old: {
           title: 'Old Podbrzezie',
@@ -107,6 +115,7 @@ angular.module('streets.controllers', [])
     },
     { id: 8,
       name: 'Krakowska',
+      src : 'img/foto_brzozowa.png',
       description: {
         old: {
           title: 'Old Krakowska',
@@ -120,6 +129,7 @@ angular.module('streets.controllers', [])
     },
     { id:9,
       name: 'Plac Nowy',
+      src : 'img/foto_krakowska.png',
       description: {
         old: {
           title: 'Old Plac Nowy',
@@ -133,6 +143,7 @@ angular.module('streets.controllers', [])
     },
     { id:10,
       name: 'Starowiślna',
+      src : 'img/foto_placnowy.png',
       description: {
         old: {
           title: 'Old Starowiślna',
@@ -146,6 +157,7 @@ angular.module('streets.controllers', [])
     },
     { id:11,
       name: 'Podbrzezie',
+      src : 'img/foto_brzozowa.png',
       description: {
         old: {
           title: 'Old Podbrzezie',

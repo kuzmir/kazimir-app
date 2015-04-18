@@ -1,11 +1,30 @@
 <ion-view view-title='MENU'>
   <ion-content>
-    <div class="logo">
-    	<img src="img/kazimir_logo_big.png">
-    	<p>Some example info</p>
-    </div>
-    <div class="kazimir-go">
-    	<a class='button kazimir-button' nav-direction='back' href='#/list-view'>Got it!</a>
-    </div>
+  	<div class="welcome-screen">
+	    <div class="ws-logo">
+	    	<img src="img/kazimir_logo.svg">
+	    	<h3 class="ws-logo-subtitle ws-border-bottom">A guide from past till now</h3>
+	    </div>
+	    <div class="ws-navigation">
+	    	<div class="ws-naviagation-left ws-border-bottom">
+	    		<p class="ws-navigation-header">Navigate left</p>
+	    		<p class="ws-navigation-description">to discover past time</p>
+	    	</div>
+	    	<div class="ws-naviagation-right ws-border-bottom">
+	    		<p class="ws-navigation-header">Navigate right</p>
+	    		<p class="ws-navigation-description">to enjoy present time</p>
+	    	</div>
+	    </div>
+	    <div class="ws-language">
+	    	<p class="ws-navigation-header">Choose language: </p>
+	    	<div class="ws-language-buttons">
+	    		<a class='button ws-change-language ws-language-en active' href=''><span>eng</span></a>
+	    		<a class='button ws-change-language ws-language-pl' href=''><span>pl</span></a>
+	    	</div>
+	    </div>
+	    <div class="ws-button">
+	    	<a class='button ws-gotit' nav-direction='back' href='#/list-view'>Discover Kazimierz</a>
+	    </div>
+	</div>
   </ion-content>
 </ion-view>

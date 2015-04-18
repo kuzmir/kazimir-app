@@ -1,7 +1,7 @@
 angular.module('street.service', [])
 .factory('StreetsService', function() {
   var StreetsSvc = {
-  	data: [
+  	streets: [
   		{ id: 0,
 	      name: 'Krakowska',
 	      description: {

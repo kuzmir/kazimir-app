@@ -14,12 +14,130 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-
+$graylogo: #757575;
+$basedark: #3e3e3e;
+$baseold: #d8c542;
+$basenew: #40a9bc;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+/* Empty. Add your own CSS if you like */
+
+/* BEGIN Light */
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/Light/OpenSans-Light.eot');
+    src:url('../fonts/Light/OpenSans-Light.eot') format('embedded-opentype'),
+        url('../fonts/Light/OpenSans-Light.woff') format('woff'),
+        url('../fonts/Light/OpenSans-Light.ttf') format('truetype'),
+        url('../fonts/Light/OpenSans-Light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/LightItalic/OpenSans-LightItalic.eot');
+    src:url('../fonts/LightItalic/OpenSans-LightItalic.eot') format('embedded-opentype'),
+        url('../fonts/LightItalic/OpenSans-LightItalic.woff') format('woff'),
+        url('../fonts/LightItalic/OpenSans-LightItalic.ttf') format('truetype'),
+        url('../fonts/LightItalic/OpenSans-LightItalic.svg') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/Regular/OpenSans-Regular.eot');
+    src:url('../fonts/Regular/OpenSans-Regular.eot') format('embedded-opentype'),
+        url('../fonts/Regular/OpenSans-Regular.woff') format('woff'),
+        url('../fonts/Regular/OpenSans-Regular.ttf') format('truetype'),
+        url('../fonts/Regular/OpenSans-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/Italic/OpenSans-Italic.eot');
+    src:url('../fonts/Italic/OpenSans-Italic.eot') format('embedded-opentype'),
+        url('../fonts/Italic/OpenSans-Italic.woff') format('woff'),
+        url('../fonts/Italic/OpenSans-Italic.ttf') format('truetype'),
+        url('../fonts/Italic/OpenSans-Italic.svg') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/Semibold/OpenSans-Semibold.eot');
+    src:url('../fonts/Semibold/OpenSans-Semibold.eot') format('embedded-opentype'),
+        url('../fonts/Semibold/OpenSans-Semibold.woff') format('woff'),
+        url('../fonts/Semibold/OpenSans-Semibold.ttf') format('truetype'),
+        url('../fonts/Semibold/OpenSans-Semibold.svg') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/SemiboldItalic/OpenSans-SemiboldItalic.eot');
+    src:url('../fonts/SemiboldItalic/OpenSans-SemiboldItalic.eot') format('embedded-opentype'),
+        url('../fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff') format('woff'),
+        url('../fonts/SemiboldItalic/OpenSans-SemiboldItalic.ttf') format('truetype'),
+        url('../fonts/SemiboldItalic/OpenSans-SemiboldItalic.svg') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/Bold/OpenSans-Bold.eot');
+    src:url('../fonts/Bold/OpenSans-Bold.eot') format('embedded-opentype'),
+        url('../fonts/Bold/OpenSans-Bold.woff') format('woff'),
+        url('../fonts/Bold/OpenSans-Bold.ttf') format('truetype'),
+        url('../fonts/Bold/OpenSans-Bold.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/BoldItalic/OpenSans-BoldItalic.eot');
+    src:url('../fonts/BoldItalic/OpenSans-BoldItalic.eot') format('embedded-opentype'),
+        url('../fonts/BoldItalic/OpenSans-BoldItalic.woff') format('woff'),
+        url('../fonts/BoldItalic/OpenSans-BoldItalic.ttf') format('truetype'),
+        url('../fonts/BoldItalic/OpenSans-BoldItalic.svg') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/ExtraBold/OpenSans-ExtraBold.eot');
+    src:url('../fonts/ExtraBold/OpenSans-ExtraBold.eot') format('embedded-opentype'),
+        url('../fonts/ExtraBold/OpenSans-ExtraBold.woff') format('woff'),
+        url('../fonts/ExtraBold/OpenSans-ExtraBold.ttf') format('truetype'),
+        url('../fonts/ExtraBold/OpenSans-ExtraBold.svg') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot');
+    src:url('../fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot') format('embedded-opentype'),
+        url('../fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff') format('woff'),
+        url('../fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.ttf') format('truetype'),
+        url('../fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.svg') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+
+.scroll{height: 100%;}
 
 .flipper {
   -webkit-perspective: 1000;
@@ -78,9 +196,139 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
        -o-transform: rotateY( -180deg );
           transform: rotateY( -180deg );
 }
+* {
+  font-family: 'Open Sans';
+}
+// Welcome screen
+.welcome-screen {
+  text-align: center;
+  height: 100%;
+  position: relative;
+  padding: 15%;
+  .ws-logo-subtitle {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    color: $graylogo;
+  }
+  .ws-navigation,
+  .ws-language {
+    font-size: 16px;
+    color: $basedark;
+  }
 
+  .ws-navigation-header {
+    font-weight: 600; 
+  }
+  .ws-navigation-description {
+    font-weight: 300; 
+  }
+  .ws-language {
+    padding-top: 10px;
+  }
+  .ws-language-buttons {
+    text-transform: uppercase;
+    .ws-change-language {
+      border-radius: 50%;
+      font-size: 14px;
+      width: 55px;
+      height: 55px;
+      background-color: $light;
+      border-color: $basedark;
+      position: relative;
+      &.ws-language-en {
+        right: 10px;
+      }
+      &.ws-language-pl {
+        left: 10px;
+      }
+      &.active {
+        background-color: $baseold;
+        border-color: $baseold;
+        span {
+          color: $light;
+          font-weight: 600;
+        }
+      }
+      span {
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+  .ws-border-bottom {
+    border-bottom: 1px solid $graylogo;
+    padding: 10px 0;
+  }
+}
+.ws-logo {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.ws-navigation {
+  .ws-naviagation-left {
+    position: relative;
+    &:before {
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 20%;
+      content: ' ';
+      overflow: hidden;
+      background: url(../img/welcome_screen_chevron_left.svg) no-repeat;
+
+    }
+  }
+  .ws-naviagation-right {
+    position: relative;
+    &:before {
+      display: block;
+      width: 23px;
+      height: 40px;
+      position: absolute;
+      top: 20%;
+      right: 0;
+      content: ' ';
+      overflow: hidden;
+      background: url(../img/welcome_screen_chevron_right.svg) no-repeat;
+    }
+  }
+}
+.ws-button {
+  padding: 30px 0 0 0;
+  .ws-gotit {
+    width: 100%;
+    background-color: $basenew;
+    color: $light;
+  }
+}
+
+//LIST VIEW
 .bar-header {
-  background-color: #70bf4c;
+  background-color: $light;
+}
+.item-kazimir {
+  padding: 0;
+  position: relative;
+  height: 220px;
+  border: none;
+  .street-item {
+    height: 100%;
+  }
+  img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.list-item-buttons {
+  position: relative;
+  top: 40%;
+  margin: 0 10px;
 }
 .button-container {
   height:70px; 
@@ -98,6 +346,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     height: 30px;
     width: 30px;
     border-radius: 50%;
+    color: $light;
     &:before {
       position:relative;
       bottom: 6px;
@@ -105,15 +354,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
   .ion-chevron-left {
     float: left;
-    background-color: #0bafde;
   }
   .ion-chevron-right {
     float: right;
-    background-color: #70bf4c;
   }
   span {
     position: relative;
-    top: 10px;
+    top: 5px;
+    font-weight: bold;
+    color: $light;
+    font-size: 28px;
   }
 }
 // Map view
@@ -129,42 +379,23 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   width: 100%;
   height: 400px;
 }
-// Welcome screen
-
-.logo,
-.kazimir-go {
-  text-align: center;
-}
-.kazimir-go {
-  .kazimir-button {
-    width: 150px;
-    background-color:#fff;
-  }
-}
-.logo {
-  height: 400px;
-  padding: 20px;
-  img,
-  p {
-    position: relative;
-    top: 80px;
-  }
-  img {
-    width: 100%;
-  }
-  p {
-    top: 100px;
-  }
-}
 
 // Header
 
 .title-left {
   width: 50%;
   img {
-    width: 100%;
+    width: 75%;
     position: relative;
     top: 8px;
+  }
+}
+.custom-icon {
+  width: 45px;
+  margin-top: 6px;
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 .post-slider {
