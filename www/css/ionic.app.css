@@ -7297,8 +7297,18 @@ a.button {
     width: 100%;
     height: auto; }
 
-.post-slider {
-  background-color: #eee; }
-
 .description {
   top: 100px; }
+
+.single-content img {
+  width: 100%;
+  height: auto; }
+
+.bar .button, .bar .title {
+  color: #fff; }
+
+.bar-new {
+  background-color: #40a9bc; }
+
+.bar-old {
+  background-color: #d8c542; }

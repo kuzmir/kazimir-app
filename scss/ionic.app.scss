@@ -398,9 +398,29 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     height: auto;
   }
 }
-.post-slider {
-  background-color: #eee;
-}
+
 .description {
   top: 100px;
+}
+
+//SINGLE ITEM 
+
+.single-content {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.bar {
+  .button,
+  .title {
+    color: $light;
+  }
+  
+}
+.bar-new {
+  background-color: $basenew;
+}
+.bar-old {
+  background-color: $baseold;
 }

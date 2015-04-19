@@ -1,23 +1,22 @@
 <ion-view>
-  <ion-nav-bar class='bar-calm'></ion-nav-bar>
-  <ion-nav-buttons side='secondary'>
-    <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' href='#/list-view'>BACK</a>
-  </ion-nav-buttons>
-
   <ion-content>
     <div class='flipper'>
       <div class='container flipped'>
         <div class='front'>
           <div class="single-content">
+            <div class="bar bar-header bar-new">  
+              <a class='button button-clear icon-left ion-arrow-left-c' nav-direction='forward' href='#/list-view'></a>  
+              <h1 class="title">{{street.name}}</h1>
+            </div>
             <ion-slide-box active-slide="activeSlide" class="post-slider">
               <ion-slide>
-                <div class="box blue"><h3>Slide example</h3></div>
+                <div class="sc-slide"><img ng-src="{{street.src}}"></div>
               </ion-slide>
               <ion-slide>
-                <div class="box yellow"><h3>Slide example</h3></div>
+                <div class="sc-slide"><img ng-src="{{street.src}}"></div>
               </ion-slide>
               <ion-slide>
-                <div class="box pink"><h3>Slide example</h3></div>
+                <div class="sc-slide"><img ng-src="{{street.src}}"></div>
               </ion-slide>
             </ion-slide-box>
             <h3>New</h3>
@@ -27,16 +26,20 @@
           </div>         
         </div>
         <div class='back'> 
-          <div class="single-content">         
+          <div class="single-content"> 
+            <div class="bar bar-header bar-old">    
+              <h1 class="title">{{street.name}}</h1>
+              <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' href='#/list-view'></a>
+            </div>       
             <ion-slide-box active-slide="activeSlide" class="post-slider">
               <ion-slide>
-                <div class="box blue"><h3>Slide example</h3></div>
+                <div class="sc-slide"><img ng-src="{{street.src}}"></div>
               </ion-slide>
               <ion-slide>
-                <div class="box yellow"><h3>Slide example</h3></div>
+                <div class="sc-slide"><img ng-src="{{street.src}}"></div>
               </ion-slide>
               <ion-slide>
-                <div class="box pink"><h3>Slide example</h3></div>
+                <div class="sc-slide"><img ng-src="{{street.src}}"></div>
               </ion-slide>
             </ion-slide-box>
             <h3>Old</h3>
@@ -53,4 +56,5 @@
     </div>
    
   </ion-content>
+
 </ion-view>
