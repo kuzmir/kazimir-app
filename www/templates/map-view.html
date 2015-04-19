@@ -5,16 +5,19 @@
   </ion-nav-buttons>
   <ion-content ng-controller="MapCtrl" ng-init="initialize()">
     <div id="map" data-tap-disabled="true"></div>
-    <ion-slide-box active-slide="activeSlide">
-      <ion-slide>
-        <div class="box blue"><h3>Slide example</h3></div>
-      </ion-slide>
-      <ion-slide>
-        <div class="box yellow"><h3>Slide example</h3></div>
-      </ion-slide>
-      <ion-slide>
-        <div class="box pink"><h3>Slide example</h3></div>
-      </ion-slide>
-    </ion-slide-box>
+    <div>
+      <ion-list>
+        <ion-item class='map-item-kazimir' ng-repeat='street in streets'>
+          <div class="map-street-item">
+            <img ng-src="{{street.src}}">
+            <div class="list-item-buttons">
+              <a href="#/streets/{{street.id}}" class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></a>
+              <span ng-model="item">{{street.name}}</span>
+              <a class="button button-icon ion-chevron-right" nav-direction='back' ng-click="singlePostNew(street)"></a>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
   </ion-content>
 </ion-view>

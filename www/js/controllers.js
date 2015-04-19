@@ -180,7 +180,6 @@ angular.module('streets.controllers', [])
     $rootScope.currentLocationDetails = street;
     $state.go('single-new');
   };
-  $scope.navTitle='<img class="title-image" src="images/kidsintouchtext.png" />';
 })
 .controller('StreetController', function($scope, $rootScope){
   $scope.street = $rootScope.currentLocationDetails;
