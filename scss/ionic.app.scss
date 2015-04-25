@@ -374,9 +374,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 #map {
   width: 100%;
-  height: 80%;
+  height: 60%;
 }
-
+.map-street-list {
+  width: 100%;
+  height: 40%;
+  overflow: scroll;
+}
 // Header
 
 .title-left {

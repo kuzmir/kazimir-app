@@ -45,7 +45,7 @@ angular.module('kazimir', ['ionic', 'streets.controllers'])
     views: {
       'container-view': {
         templateUrl: 'templates/map-view.html',
-        controller: 'MapCtrl'
+        controller: 'StreetsController'
       }
     }
   })
