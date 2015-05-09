@@ -4,23 +4,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('kazimir', ['ionic', 'streets.controllers'])
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
+var KazimirApp = angular.module('kazimir', ['ionic', 'streets.controllers', 'uiGmapgoogle-maps', 'restangular']);
 
-.config(function($stateProvider, $urlRouterProvider) {
+// configure routes / states
+KazimirApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-  
+
   .state('menu', {
     url: '/menu',
     views: {
@@ -29,7 +18,7 @@ angular.module('kazimir', ['ionic', 'streets.controllers'])
       }
     }
   })
-  
+
   .state('list-view', {
     url: '/list-view',
     views: {
@@ -45,11 +34,11 @@ angular.module('kazimir', ['ionic', 'streets.controllers'])
     views: {
       'container-view': {
         templateUrl: 'templates/map-view.html',
-        controller: 'StreetsController'
+        controller: 'MapController'
       }
     }
   })
-  
+
   .state('single-old', {
     url: '/streets/:id',
     views: {
@@ -71,5 +60,41 @@ angular.module('kazimir', ['ionic', 'streets.controllers'])
   })
 
   $urlRouterProvider.otherwise('/menu');
+});
+
+// Setup Google Maps integration
+KazimirApp.config(function(uiGmapGoogleMapApiProvider){
+  uiGmapGoogleMapApiProvider.configure({
+    key: 'AIzaSyDYz04VOan5pJY5HhQeWiVap0a7UjUba4A',
+    libraries: 'geometry',
+    v: '3.17'
+  })
+});
+
+// Setup Restangular to connect to API resources
+KazimirApp.config(function(RestangularProvider){
+  // For production API should point to main server ->
+  // RestangularProvider.setBaseUrl('http://kazimirapp.pl')
+  // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
+
+  // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
+  RestangularProvider.setBaseUrl('/api')
+
+  // always request JSON format
+  RestangularProvider.setRequestSuffix('.json');
 })
 
+
+// Initialize the app
+KazimirApp.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
+})

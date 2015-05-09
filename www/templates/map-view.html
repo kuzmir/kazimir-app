@@ -1,15 +1,23 @@
-<ion-view title='<img class="title-image" src="img/kazimir_logotype.svg" />' ng-controller="StreetsController">
+<ion-view title='<img class="title-image" src="img/kazimir_logotype.svg" />' ng-controller="MapController">
   <ion-nav-bar class='list-bar'></ion-nav-bar>
   <ion-nav-buttons side='primary'>
     <a class='button button-icon icon custom-icon' nav-direction='back' href='#/list-view'><img src="img/icon_list.svg"></a>
   </ion-nav-buttons>
   <ion-content>
-    <div ng-init="initialize()" id="map" data-tap-disabled="true"></div>
+
+    <div id="map" data-tap-disabled="true">
+
+      <ui-gmap-google-map center="map.center" zoom="map.zoom" options="mapOptions">
+        <ui-gmap-polyline ng-repeat="s in streets" path="s.path" stroke="pathOptions.stroke" visible="true"></ui-gmap-polyline>
+      </ui-gmap-google-map>
+
+    </div>
+    <!--
     <div class="map-street-list">
       <ion-list>
         <ion-item class='map-item-kazimir' ng-repeat='street in streets'>
           <div class="map-street-item">
-            <!-- <img ng-src="{{street.src}}"> -->
+            <img ng-src="{{street.src}}">
             <div class="list-item-buttons">
               <a href="#/streets/{{street.id}}" class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></a>
               <span ng-model="item">{{street.name}}</span>
@@ -19,5 +27,6 @@
         </ion-item>
       </ion-list>
     </div>
+    -->
   </ion-content>
 </ion-view>
