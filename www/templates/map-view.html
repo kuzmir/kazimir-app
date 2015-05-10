@@ -1,16 +1,17 @@
-<ion-view title='<img class="title-image" src="img/kazimir_logotype.svg" />' ng-controller="MapController">
-  <ion-nav-bar class='list-bar'></ion-nav-bar>
-  <ion-nav-buttons side='primary'>
-    <a class='button button-icon icon custom-icon' nav-direction='back' href='#/list-view'><img src="img/icon_list.svg"></a>
-  </ion-nav-buttons>
+<ion-view ng-controller="MapController">
+  <ion-header-bar class="list-bar">
+    <div class="header-logo">
+      <a nav-direction='exit' href='#/menu'><img class="title-image" src="img/kazimir_logotype.svg" /></a>   
+    </div>
+    <div class="header-nav">
+      <a class='button button-icon icon custom-icon' nav-direction='enter' href='#/list-view'><img src="img/icon_list.svg"></a>
+    </div>
+  </ion-header-bar>
   <ion-content>
-
     <div id="map" data-tap-disabled="true">
-
       <ui-gmap-google-map center="map.center" zoom="map.zoom" options="mapOptions">
         <ui-gmap-polyline ng-repeat="s in streets" path="s.path" stroke="pathOptions.stroke" visible="true"></ui-gmap-polyline>
       </ui-gmap-google-map>
-
     </div>
     <!--
     <div class="map-street-list">

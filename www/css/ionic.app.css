@@ -7295,12 +7295,19 @@ a.button {
   height: 40%;
   overflow: scroll; }
 
-.title-left {
-  width: 50%; }
-  .title-left img {
+.header-logo {
+  width: 50%;
+  position: relative;
+  left: 10px; }
+  .header-logo img {
     width: 75%;
     position: relative;
     top: 8px; }
+
+.header-nav {
+  position: absolute;
+  right: 10px;
+  top: 3px; }
 
 .custom-icon {
   width: 45px;

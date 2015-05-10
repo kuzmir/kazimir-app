@@ -1,8 +1,13 @@
-<ion-view title='<img class="title-image" src="img/kazimir_logotype.svg" />' ng-controller="StreetController">
-  <ion-nav-bar class='list-bar'></ion-nav-bar>
-  <ion-nav-buttons side='primary'>
-    <a class='button button-icon icon custom-icon' nav-direction='back' href='#/map-view'><img src="img/map_icon.svg"></a>
-  </ion-nav-buttons>
+<ion-view ng-controller="StreetController">
+  <ion-header-bar class="list-bar">
+    <div class="header-logo">
+      <a nav-direction='exit' href='#/menu'><img class="title-image" src="img/kazimir_logotype.svg" /></a>   
+    </div>
+    <div class="header-nav">
+      <a class='button button-icon icon custom-icon' nav-direction='enter' href='#/map-view'><img src="img/map_icon.svg"></a>
+    </div>
+  </ion-header-bar>
+  
   <ion-content>
     <div>
       <ion-list>
@@ -10,9 +15,9 @@
           <div class="street-item">
             <img ng-src="{{street.places.present[0].photos[0].images.medium}}">
             <div class="list-item-buttons">
-              <a class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></a>
+              <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(street)"></a>
               <span ng-model="item">{{street.name}}</span>
-              <a class="button button-icon ion-chevron-right" nav-direction='back' ng-click="singlePostNew(street)"></a>
+              <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(street)"></a>
             </div>
           </div>
         </ion-item>

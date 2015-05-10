@@ -399,13 +399,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 // Header
 
-.title-left {
+.header-logo {
   width: 50%;
+  position: relative;
+  left: 10px;
   img {
     width: 75%;
     position: relative;
     top: 8px;
   }
+}
+.header-nav {
+  position: absolute;
+  right: 10px;
+  top: 3px;
 }
 .custom-icon {
   width: 45px;
