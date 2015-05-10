@@ -15,6 +15,7 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 $graylogo: #757575;
+$basefontgray: #424242;
 $basedark: #3e3e3e;
 $baseold: #d8c542;
 $basenew: #40a9bc;
@@ -333,7 +334,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .button-container {
   height:70px; 
   position:fixed; 
-  top:300px;
+  bottom: 5%;
   left:0px;
   right:0px;
   text-align: center;
@@ -407,10 +408,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 //SINGLE ITEM 
 
 .single-content {
+  color: $basefontgray;
   img {
     width: 100%;
     height: auto;
   }
+}
+.sc-container {
+  padding: 20px;
 }
 .bar {
   .button,

@@ -8,9 +8,9 @@
       <ion-list>
         <ion-item class='item-kazimir' ng-repeat='street in streets'>
           <div class="street-item">
-            <img ng-src="img/foto_krakowska.png">
+            <img ng-src="{{street.places.present[0].photos[0].images.medium}}">
             <div class="list-item-buttons">
-              <a href="#/streets/{{street.id}}" class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></a>
+              <a class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></a>
               <span ng-model="item">{{street.name}}</span>
               <a class="button button-icon ion-chevron-right" nav-direction='back' ng-click="singlePostNew(street)"></a>
             </div>

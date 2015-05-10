@@ -7245,7 +7245,7 @@ a.button {
 .button-container {
   height: 70px;
   position: fixed;
-  top: 300px;
+  bottom: 5%;
   left: 0px;
   right: 0px;
   text-align: center;
@@ -7302,9 +7302,14 @@ a.button {
 .description {
   top: 100px; }
 
-.single-content img {
-  width: 100%;
-  height: auto; }
+.single-content {
+  color: #424242; }
+  .single-content img {
+    width: 100%;
+    height: auto; }
+
+.sc-container {
+  padding: 20px; }
 
 .bar .button, .bar .title {
   color: #fff; }

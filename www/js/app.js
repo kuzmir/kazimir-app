@@ -44,7 +44,7 @@ KazimirApp.config(function($stateProvider, $urlRouterProvider) {
     views: {
       'container-view': {
         templateUrl: 'templates/single-old.html',
-        controller: 'StreetController'
+        controller: 'StreetsController'
       }
     }
   })
@@ -54,7 +54,7 @@ KazimirApp.config(function($stateProvider, $urlRouterProvider) {
     views: {
       'container-view': {
         templateUrl: 'templates/single-new.html',
-        controller: 'StreetController'
+        controller: 'StreetsController'
       }
     }
   })
