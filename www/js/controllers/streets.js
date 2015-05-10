@@ -24,10 +24,16 @@ angular.module('kazimir')
     $state.go('single-new');
     return $rootScope.street;
   };
- 
+
+  $scope.class = "old";
   $scope.rotate = function() {
       var container = document.getElementsByClassName('container');
       container = angular.element(container);
       container.toggleClass('flipped');
+      if ($scope.class === "old") {
+        $scope.class = "new";
+      }else {
+        $scope.class = "old";
+      }
   };
 });
