@@ -9,14 +9,8 @@
               <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' href='#/list-view'></a>
             </div>
             <div ng-repeat="past in street.places.past">     
-              <ion-slide-box active-slide="activeSlide" class="post-slider" ng-repeat="photo in past.photos">
-                <ion-slide>
-                  <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
-                </ion-slide>
-                <ion-slide>
-                  <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
-                </ion-slide>
-                <ion-slide>
+              <ion-slide-box active-slide="activeSlide" class="post-slider">
+                <ion-slide ng-repeat="photo in past.photos">
                   <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
                 </ion-slide>
               </ion-slide-box>
@@ -34,14 +28,8 @@
               <h1 class="title">{{street.name}}</h1>
             </div>
             <div ng-repeat="present in street.places.present">
-              <ion-slide-box active-slide="activeSlide" class="post-slider" ng-repeat="photo in present.photos">
-                <ion-slide>
-                  <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
-                </ion-slide>
-                <ion-slide>
-                  <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
-                </ion-slide>
-                <ion-slide>
+              <ion-slide-box active-slide="activeSlide" class="post-slider">
+                <ion-slide ng-repeat="photo in present.photos">
                   <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
                 </ion-slide>
               </ion-slide-box>
