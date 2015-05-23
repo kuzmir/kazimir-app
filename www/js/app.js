@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var KazimirApp = angular.module('kazimir', ['ionic', 'streets.controllers', 'uiGmapgoogle-maps', 'restangular']);
+var KazimirApp = angular.module('kazimir', ['ionic', 'uiGmapgoogle-maps', 'restangular']);
 
 // configure routes / states
 KazimirApp.config(function($stateProvider, $urlRouterProvider) {

@@ -1,17 +1,14 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('StreetsController', function($scope, $rootScope, $state, Restangular) {
+.controller('StreetsController', function($scope, $rootScope, $state, ApiService) {
 
-  // initialize restangular resource/model
-  var Street = Restangular.all('streets');
-
-  // get the street list
-  Street.getList().then(function(streets){
-    // pass all data to scope
-    // console.log('Streets loaded:', streets);
-    $scope.streets = streets;
+  // Get the street list from API
+  console.log('Hey')
+  ApiService.getStreets().then(function(data){
+    $scope.streets = data;
   });
+
   // on click go to past single view
   $scope.singlePostOld = function ($index) {
     $rootScope.street = $index;

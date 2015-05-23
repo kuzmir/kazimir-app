@@ -1,16 +1,11 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('MapController', function($scope, Restangular) {
+.controller('MapController', function($scope, ApiService) {
 
-  // initialize restangular resource/model
-  var Street = Restangular.all('streets');
-
-  // get the street list
-  Street.getList().then(function(streets){
-    // pass all data to scope
-    // TODO: check why streets are not rendered?
-    $scope.streets = streets;
+  // Get the street list from API
+  ApiService.getStreets().then(function(data){
+    $scope.streets = data;
   });
 
 
