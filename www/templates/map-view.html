@@ -1,4 +1,4 @@
-<ion-view ng-controller="MapController">
+<ion-view>
   <ion-header-bar class="list-bar">
     <div class="header-logo">
       <a nav-direction='exit' href='#/menu'><img class="title-image" src="img/kazimir_logotype.svg" /></a>   
@@ -8,26 +8,21 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <div id="map" data-tap-disabled="true">
+    <div id="map" data-tap-disabled="true" ng-controller="MapController">
       <ui-gmap-google-map center="map.center" zoom="map.zoom" options="mapOptions">
         <ui-gmap-polyline ng-repeat="s in streets" path="s.path" stroke="pathOptions.stroke" visible="true"></ui-gmap-polyline>
       </ui-gmap-google-map>
     </div>
-    <!--
-    <div class="map-street-list">
-      <ion-list>
-        <ion-item class='map-item-kazimir' ng-repeat='street in streets'>
+    <ion-scroll class="map-street-list" ng-controller="StreetController">
+      <div class='map-item-kazimir' ng-repeat='street in streets'>
           <div class="map-street-item">
-            <img ng-src="{{street.src}}">
             <div class="list-item-buttons">
-              <a href="#/streets/{{street.id}}" class="button button-icon ion-chevron-left" nav-direction='forward' ng-click="singlePostOld(street)"></a>
-              <span ng-model="item">{{street.name}}</span>
-              <a class="button button-icon ion-chevron-right" nav-direction='back' ng-click="singlePostNew(street)"></a>
+              <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(street)"></a>
+              <div ng-model="item" class="map-item-name">{{street.name}}</div>
+              <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(street)"></a>
             </div>
           </div>
-        </ion-item>
-      </ion-list>
-    </div>
-    -->
+      </div>
+    </ion-scroll>  
   </ion-content>
 </ion-view>
