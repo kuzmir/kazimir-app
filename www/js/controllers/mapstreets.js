@@ -45,13 +45,16 @@ angular.module('kazimir')
     }
   };
 
+  $scope.selectedItem = "";
   $scope.streetSelected = function($index){
-    console.log($index);
+    console.log($index.name);
     if ($scope.class === "active") {
       $scope.class = "closed";
       delegate.freezeScroll(true);
     }
-    return $rootScope.street;
+    $scope.selectedItem = $index;
+    console.log($scope.selectedItem);
+    return $scope.selectedItem;
   };
 
 });
