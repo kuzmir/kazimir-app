@@ -13,16 +13,25 @@
         <ui-gmap-polyline ng-repeat="s in streets" path="s.path" stroke="pathOptions.stroke" visible="true"></ui-gmap-polyline>
       </ui-gmap-google-map>
     </div>
-    <ion-scroll class="map-street-list" ng-controller="StreetController">
-      <div class='map-item-kazimir' ng-repeat='street in streets'>
-          <div class="map-street-item">
-            <div class="list-item-buttons">
-              <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(street)"></a>
-              <div ng-model="item" class="map-item-name">{{street.name}}</div>
-              <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(street)"></a>
+    <div ng-controller="MapStreetsController">
+      <ion-content delegate-handle="mapScroll" ng-class="class" class="map-street-list">
+        <div ng-show="item.name" class="selected-item">{{item.name}}</div>
+        <div class='map-item-kazimir' ng-repeat='street in streets'>
+            <div class="map-street-item">
+              <div class="list-item-buttons">
+                <!-- <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(street)"></a> -->
+                <div ng-model="item" class="map-item-name">
+                  <span ng-click="streetSelected(street)">{{street.name}}</span>
+                </div>
+                <!-- <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(street)"></a> -->
+              </div>
             </div>
-          </div>
+        </div>
+      </ion-content>  
+
+      <div class='button-container m-button-container'> 
+        <a class='button button-icon open-map-list' ng-click='openMapList()'><i class="icon ion-more"></i></a>  
       </div>
-    </ion-scroll>  
+    </div>
   </ion-content>
 </ion-view>

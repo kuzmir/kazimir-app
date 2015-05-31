@@ -24,7 +24,7 @@ angular.module('kazimir')
     $state.go('single-new');
     return $rootScope.street;
   };
-
+  
   $scope.class = "old";
   $scope.rotate = function() {
       var container = document.getElementsByClassName('container');
