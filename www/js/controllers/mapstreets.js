@@ -11,7 +11,9 @@ angular.module('kazimir')
     // pass all data to scope
     // console.log('Streets loaded:', streets);
     $scope.streets = streets;
+
   });
+
   // on click go to past single view
   $scope.singlePostOld = function ($index) {
     $rootScope.street = $index;

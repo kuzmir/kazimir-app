@@ -11,9 +11,15 @@ angular.module('kazimir')
     // pass all data to scope
     // TODO: check why streets are not rendered?
     $scope.streets = streets;
+    streets.forEach(function(value) {
+      var latLangPath = value.path_string.split(";");
+      latLangPath.forEach(function(value){
+        var latlng = value.split(",");
+        $scope.location = new google.maps.LatLng(latlng[0], latlng[1]);
+      });
+    });
   });
-
-
+ 
   $scope.map = {
     center: {
       latitude: 50.0491111,
@@ -31,5 +37,4 @@ angular.module('kazimir')
       weight: 3
     }
   }
-
 });
