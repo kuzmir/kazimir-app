@@ -14,13 +14,13 @@
       </ui-gmap-google-map>
     </div>
     <div ng-controller="MapStreetsController">
+      <div ng-if="selectedItem" class="item-label">
+        <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(selectedItem)"></a>
+        <div class="selected-item">{{selectedItem.name}}</div>
+        <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(selectedItem)"></a>
+      </div>
       <ion-content delegate-handle="mapScroll" ng-class="class" class="map-street-list">
-        <div ng-if="selectedItem" class="item-label">
-          <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(street)"></a>
-          <div class="selected-item">{{selectedItem.name}}</div>
-          <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(street)"></a>
-        </div>
-        <div class='map-item-kazimir' ng-repeat='street in streets'>
+        <div ng-if="!selectedItem" class='map-item-kazimir' ng-repeat='street in streets'>
             <div class="map-street-item">
               <div class="list-item-buttons">
                 <div ng-model="item" class="map-item-name">
@@ -30,8 +30,8 @@
             </div>
         </div>
       </ion-content>  
-      <div class='button-container m-button-container'> 
-        <a class='button button-icon open-map-list' ng-click='openMapList()'><i class="icon ion-more"></i></a>  
+      <div ng-class="class" class='button-container m-button-container'> 
+        <a class='button button-icon open-map-list' ng-click='openMapList()'><i class="icon ion-more"></i></a>
       </div>
     </div>
   </ion-content>

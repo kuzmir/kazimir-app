@@ -32,13 +32,12 @@ angular.module('kazimir')
   }, 1000);
 
   $scope.class = "closed";
-  var container = document.getElementsByClassName('map-street-list');
-  container = angular.element(container);
-  container.toggleClass('active');
+ 
   $scope.openMapList = function() {
     if ($scope.class === "closed") {
       $scope.class = "active";
-      delegate.freezeScroll(false);
+      $scope.selectedItem = false;
+      delegate.freezeScroll(false);     
     }else {
       $scope.class = "closed";
       delegate.freezeScroll(true);
@@ -47,13 +46,11 @@ angular.module('kazimir')
 
   $scope.selectedItem = "";
   $scope.streetSelected = function($index){
-    console.log($index.name);
     if ($scope.class === "active") {
       $scope.class = "closed";
       delegate.freezeScroll(true);
     }
     $scope.selectedItem = $index;
-    console.log($scope.selectedItem);
     return $scope.selectedItem;
   };
 
