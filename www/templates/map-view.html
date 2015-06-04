@@ -10,7 +10,7 @@
   <ion-content>
     <div id="map" data-tap-disabled="true" ng-controller="MapController">
       <ui-gmap-google-map center="map.center" zoom="map.zoom" options="mapOptions">
-        <ui-gmap-polyline ng-repeat="s in streets" path="location" stroke="pathOptions.stroke" visible="true"></ui-gmap-polyline>
+        <ui-gmap-polyline ng-repeat="s in streets" path="s.path" stroke="pathOptions.stroke" visible="true"></ui-gmap-polyline>
       </ui-gmap-google-map>
     </div>
     <div ng-controller="MapStreetsController">

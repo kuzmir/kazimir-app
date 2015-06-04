@@ -13,7 +13,7 @@ angular.module('kazimir')
     $scope.streets = streets;
 
   });
-
+  
   // on click go to past single view
   $scope.singlePostOld = function ($index) {
     $rootScope.street = $index;

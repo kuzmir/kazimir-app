@@ -36,4 +36,8 @@ angular.module('kazimir')
         $scope.class = "old";
       }
   };
+  $scope.myGoBack = function() {
+    console.log('back');
+    $ionicHistory.goBack();
+  };
 });
