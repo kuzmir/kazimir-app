@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('MapStreetsController', function($scope, $rootScope, $state, Restangular, $ionicScrollDelegate, $timeout) {
+.controller('MapStreetsController', function($scope, $rootScope, $state, Restangular, $ionicScrollDelegate, $ionicHistory, $timeout) {
 
   // initialize restangular resource/model
   var Street = Restangular.all('streets');
@@ -45,7 +45,15 @@ angular.module('kazimir')
       delegate.freezeScroll(true);
     }
   };
-
+  $scope.selectLine = function(item){
+    $scope.pathOptions = {
+      stroke: {
+        color: '#000000',
+        weight: 3
+      }
+    }
+    $scope.pathOptions.push();
+  }
   $scope.selectedItem = "";
   $scope.streetSelected = function($index){
     if ($scope.class === "active") {
@@ -53,7 +61,12 @@ angular.module('kazimir')
       delegate.freezeScroll(true);
     }
     $scope.selectedItem = $index;
+    
     return $scope.selectedItem;
+  };
+  
+  $scope.myGoBack = function() {
+    $ionicHistory.goBack();
   };
 
 });

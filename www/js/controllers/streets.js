@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('StreetsController', function($scope, $rootScope, $state, Restangular) {
+.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular) {
 
   // initialize restangular resource/model
   var Street = Restangular.all('streets');
@@ -36,8 +36,8 @@ angular.module('kazimir')
         $scope.class = "old";
       }
   };
+  
   $scope.myGoBack = function() {
-    console.log('back');
     $ionicHistory.goBack();
   };
 });

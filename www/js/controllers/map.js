@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('MapController', function($scope, Restangular) {
+.controller('MapController', function($scope, $rootScope, Restangular) {
 
   // initialize restangular resource/model
   var Street = Restangular.all('streets');
@@ -22,8 +22,9 @@ angular.module('kazimir')
         street.path.push(location);
       });
     });
+    console.log($scope.selectedItem);
   });
- 
+  
   $scope.map = {
     center: {
       latitude: 50.0491111,

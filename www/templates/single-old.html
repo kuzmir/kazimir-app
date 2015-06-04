@@ -25,7 +25,7 @@
           <div class="single-content"> 
             <div class="bar bar-header bar-old">    
               <h1 class="title">{{street.name}}</h1>
-              <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' href='#/list-view'></a>
+              <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' ng-click="myGoBack()"></a>
             </div>
             <div ng-repeat="past in street.places.past">     
               <ion-slide-box active-slide="activeSlide" class="post-slider">
