@@ -22,9 +22,10 @@ angular.module('kazimir')
         street.path.push(location);
       });
     });
-    console.log($scope.selectedItem);
   });
-  
+  $rootScope.$on('streetSelected', function(event, street) {
+    $scope.selectedStreet  = street; 
+  })
   $scope.map = {
     center: {
       latitude: 50.0491111,
@@ -38,8 +39,21 @@ angular.module('kazimir')
 
   $scope.pathOptions = {
     stroke: {
+      color: '#565656',
+      weight: 3
+    },
+    selectedStroke: {
       color: '#6060FB',
       weight: 3
     }
   }
+  $scope.getStroke = function(street){
+
+    if($scope.selectedStreet && ($scope.selectedStreet.id   === street.id)) {
+      return $scope.pathOptions.selectedStroke;
+    }else {
+      return $scope.pathOptions.stroke;
+    }
+  };
+
 });

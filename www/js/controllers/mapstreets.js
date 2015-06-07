@@ -45,15 +45,7 @@ angular.module('kazimir')
       delegate.freezeScroll(true);
     }
   };
-  $scope.selectLine = function(item){
-    $scope.pathOptions = {
-      stroke: {
-        color: '#000000',
-        weight: 3
-      }
-    }
-    $scope.pathOptions.push();
-  }
+  
   $scope.selectedItem = "";
   $scope.streetSelected = function($index){
     if ($scope.class === "active") {
@@ -61,7 +53,7 @@ angular.module('kazimir')
       delegate.freezeScroll(true);
     }
     $scope.selectedItem = $index;
-    
+    $rootScope.$emit('streetSelected', $scope.selectedItem);
     return $scope.selectedItem;
   };
   
