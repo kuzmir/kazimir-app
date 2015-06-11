@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular) {
+.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular, $translate) {
 
   // initialize restangular resource/model
   var Street = Restangular.all('streets');
@@ -37,6 +37,8 @@ angular.module('kazimir')
       }
   };
   
+  $scope.lang = 'en';//$translate.proposedLanguage();
+
   $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };

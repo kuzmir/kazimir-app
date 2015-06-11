@@ -34,7 +34,10 @@ angular.module('kazimir')
   };
 
   $scope.mapOptions = {
-    scrollwheel: false
+    scrollwheel: false,
+    streetViewControl: false,
+    zoomControl: false,
+    mapTypeControl: false
   };
 
   $scope.pathOptions = {

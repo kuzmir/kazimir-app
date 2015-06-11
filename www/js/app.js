@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var KazimirApp = angular.module('kazimir', ['ionic', 'streets.controllers', 'uiGmapgoogle-maps', 'restangular']);
+var KazimirApp = angular.module('kazimir', ['ionic', 'streets.controllers', 'uiGmapgoogle-maps', 'restangular', 'pascalprecht.translate']);
 
 // configure routes / states
 KazimirApp.config(function($stateProvider, $urlRouterProvider) {
@@ -84,9 +84,20 @@ KazimirApp.config(function(RestangularProvider){
   RestangularProvider.setRequestSuffix('.json');
 })
 
-
+KazimirApp.config(function($translateProvider) {
+    $translateProvider.translations('pl', {
+        hello_message: "hadzia",
+        goodbye_message: "ciao kakao"
+    });
+    $translateProvider.translations('en', {
+        hello_message: "Hola",
+        goodbye_message: "Adios"
+    });
+    $translateProvider.preferredLanguage("pl");
+    $translateProvider.fallbackLanguage("en");
+});
 // Initialize the app
-KazimirApp.run(function($ionicPlatform) {
+KazimirApp.run(function($ionicPlatform, $translate) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -95,6 +106,15 @@ KazimirApp.run(function($ionicPlatform) {
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
+    }
+    if(typeof navigator.globalization !== "undefined") {
+      navigator.globalization.getpreferredLanguage(function(language){
+        $translate.use((language.value).split("-")[0]).then(function(data) {
+            console.log("SUCCESS -> " + data);
+        }, function(error) {
+            console.log("ERROR -> " + error);
+        });
+      }, null);
     }
   });
 })

@@ -15,8 +15,8 @@
                 </ion-slide>
               </ion-slide-box>
               <div class="sc-container">
-                <h3>{{past.details.pl.name}}</h3>
-                <div>{{past.details.pl.description}}</div>
+                <h3 ng-bind="past.details[lang].name"></h3>
+                <div ng-bind="past.details[lang].description"></div>
               </div>
             </div>
           </div>    
@@ -34,8 +34,8 @@
                 </ion-slide>
               </ion-slide-box>
               <div class="sc-container">
-                <h3>{{present.details.pl.name}}</h3>
-                <div>{{present.details.pl.description}}</div>
+                <h3 ng-bind="present.details[lang].name"></h3>
+                <div ng-bind="present.details[lang].description"></div>
               </div>
             </div>
           </div>
