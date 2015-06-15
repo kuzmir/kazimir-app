@@ -7974,16 +7974,16 @@ a.button {
 
 .map-street-list {
   width: 100%;
-  height: 11%;
+  height: 13%;
   position: absolute;
   background-color: rgba(224, 224, 224, 0.8);
   bottom: 0;
   top: inherit; }
   .map-street-list.active {
-    height: 32%; }
+    height: 37%; }
 
 .map-street-item {
-  padding: 10px 0;
+  padding: 15px 0;
   border: 1px solid #eee; }
   .map-street-item .button {
     display: inline-block; }
@@ -8016,9 +8016,19 @@ a.button {
       right: 10px; }
 
 .m-button-container {
-  bottom: 10%; }
+  bottom: 15%; }
+  .m-button-container .open-map-list {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    background-color: rgba(224, 224, 224, 0.8); }
+    .m-button-container .open-map-list .icon {
+      top: 2px;
+      left: 1px;
+      position: relative;
+      color: #565656; }
   .m-button-container.active {
-    bottom: 32%; }
+    bottom: 38%; }
 
 .header-logo {
   width: 50%;

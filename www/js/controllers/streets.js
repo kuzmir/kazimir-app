@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular, $translate) {
+.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular, $translate, $ionicViewSwitcher) {
 
   // initialize restangular resource/model
   var Street = Restangular.all('streets');
@@ -14,6 +14,7 @@ angular.module('kazimir')
   });
   // on click go to past single view
   $scope.singlePostOld = function ($index) {
+    $ionicViewSwitcher.nextDirection( 'back' );
     $rootScope.street = $index;
     $state.go('single-old');
     return $rootScope.street;
@@ -40,6 +41,10 @@ angular.module('kazimir')
   $scope.lang = 'en';//$translate.proposedLanguage();
 
   $scope.myGoBack = function() {
+    $ionicHistory.goBack();
+  };
+  $scope.myGoBackForward =function(){
+    $ionicViewSwitcher.nextDirection( 'forward' );
     $ionicHistory.goBack();
   };
 });

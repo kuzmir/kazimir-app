@@ -86,12 +86,10 @@ KazimirApp.config(function(RestangularProvider){
 
 KazimirApp.config(function($translateProvider) {
     $translateProvider.translations('pl', {
-        hello_message: "hadzia",
-        goodbye_message: "ciao kakao"
+        choose_street: "Wybierz ulicę"
     });
     $translateProvider.translations('en', {
-        hello_message: "Hola",
-        goodbye_message: "Adios"
+        choose_street: "Choose street"
     });
     $translateProvider.preferredLanguage("pl");
     $translateProvider.fallbackLanguage("en");

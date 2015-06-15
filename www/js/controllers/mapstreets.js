@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('MapStreetsController', function($scope, $rootScope, $state, Restangular, $ionicScrollDelegate, $ionicHistory, $timeout) {
+.controller('MapStreetsController', function($scope, $rootScope, $state, Restangular, $ionicScrollDelegate, $ionicHistory, $timeout, $ionicViewSwitcher) {
 
   // initialize restangular resource/model
   var Street = Restangular.all('streets');
@@ -16,6 +16,7 @@ angular.module('kazimir')
   
   // on click go to past single view
   $scope.singlePostOld = function ($index) {
+    $ionicViewSwitcher.nextDirection( 'back' );
     $rootScope.street = $index;
     $state.go('single-old');
     return $rootScope.street;
@@ -61,4 +62,8 @@ angular.module('kazimir')
     $ionicHistory.goBack();
   };
 
+  $scope.myGoBackForward =function(){
+    $ionicViewSwitcher.nextDirection( 'forward' );
+    $ionicHistory.goBack();
+  };
 });

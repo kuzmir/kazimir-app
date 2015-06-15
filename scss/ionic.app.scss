@@ -420,17 +420,17 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 .map-street-list {
   width: 100%;
-  height: 11%;
+  height: 13%;
   position: absolute;
   background-color: rgba(224, 224, 224, 0.8);
   bottom: 0;
   top: inherit;
   &.active {
-    height: 32%;
+    height: 37%;
   }
 }
 .map-street-item {
-  padding: 10px 0;
+  padding: 15px 0;
   border: 1px solid #eee;
   .button {
     display: inline-block;
@@ -473,9 +473,21 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // List on the map view
 
 .m-button-container {
-  bottom: 10%;
+  bottom: 15%;
+  .open-map-list {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    background-color: rgba(224, 224, 224, 0.8);
+    .icon {
+      top: 2px;
+      left: 1px;
+      position: relative;
+      color: #565656;
+    }
+  }
   &.active {
-    bottom: 32%;
+    bottom: 38%;
   }
 }
 // Header

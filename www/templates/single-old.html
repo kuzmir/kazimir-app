@@ -25,7 +25,7 @@
           <div class="single-content"> 
             <div class="bar bar-header bar-old">    
               <h1 class="title">{{street.name}}</h1>
-              <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' ng-click="myGoBack()"></a>
+              <a class='button button-clear icon-right ion-arrow-right-c' nav-direction='forward' ng-click="myGoBackForward()"></a>
             </div>
             <div ng-repeat="past in street.places.past">     
               <ion-slide-box active-slide="activeSlide" class="post-slider">
@@ -42,9 +42,8 @@
         </div>
       </div>
     </div>
-    <div class='button-container'> 
-      <a class='button button-icon toggle-button' ng-class="class" id="toggleButton" ng-click='rotate()'></a>  
-    </div>
   </ion-content>
-
+  <div class='button-container'> 
+    <a class='button button-icon toggle-button' ng-class="class" id="toggleButton" ng-click='rotate()'></a>  
+  </div>
 </ion-view>
