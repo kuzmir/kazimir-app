@@ -139,7 +139,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .scroll{height: 100%;}
-
+.scroll-content {
+  background: #eee;
+}
 .flipper {
   -webkit-perspective: 1000;
      -moz-perspective: 1000;
@@ -394,10 +396,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   height: 50px;
   border-radius: 50%;
   &.old {
-    background-color: $basenew;
+    background-color: $baseold;
   }
   &.new {
-    background-color: $baseold;
+    background-color: $basenew;
   }
 }
 
@@ -524,6 +526,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .single-content {
   color: $basefontgray;
+  background: #fff;
   img {
     width: 100%;
     height: auto;

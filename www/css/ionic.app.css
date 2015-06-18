@@ -7749,6 +7749,9 @@ a.button {
 .scroll {
   height: 100%; }
 
+.scroll-content {
+  background: #eee; }
+
 .flipper {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
@@ -7954,9 +7957,9 @@ a.button {
   height: 50px;
   border-radius: 50%; }
   .toggle-button.old {
-    background-color: #40a9bc; }
-  .toggle-button.new {
     background-color: #d8c542; }
+  .toggle-button.new {
+    background-color: #40a9bc; }
 
 .angular-google-map-container {
   min-height: 400px;
@@ -8055,7 +8058,8 @@ a.button {
   top: 100px; }
 
 .single-content {
-  color: #424242; }
+  color: #424242;
+  background: #fff; }
   .single-content img {
     width: 100%;
     height: auto; }

@@ -17,24 +17,26 @@ angular.module('kazimir')
     $ionicViewSwitcher.nextDirection( 'back' );
     $rootScope.street = $index;
     $state.go('single-old');
+    $rootScope.buttonClass = "new";
     return $rootScope.street;
   };
   //on click go to present single view
   $scope.singlePostNew = function ($index) {
     $rootScope.street = $index;
     $state.go('single-new');
+    $rootScope.buttonClass = "old";
     return $rootScope.street;
   };
 
-  $scope.class = "old";
+  
   $scope.rotate = function() {
       var container = document.getElementsByClassName('container');
       container = angular.element(container);
       container.toggleClass('flipped');
-      if ($scope.class === "old") {
-        $scope.class = "new";
+      if ($rootScope.buttonClass === "old") {
+        $rootScope.buttonClass = "new";
       }else {
-        $scope.class = "old";
+        $rootScope.buttonClass = "old";
       }
   };
   
