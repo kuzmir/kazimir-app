@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular, $translate, $ionicViewSwitcher) {
+.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular, $translate, $ionicViewSwitcher, $ionicScrollDelegate) {
 
   // initialize restangular resource/model
   var Street = Restangular.all('streets');
@@ -18,6 +18,7 @@ angular.module('kazimir')
     $rootScope.street = $index;
     $state.go('single-old');
     $rootScope.buttonClass = "new";
+    $rootScope.headerClass = "old";
     return $rootScope.street;
   };
   //on click go to present single view
@@ -25,18 +26,26 @@ angular.module('kazimir')
     $rootScope.street = $index;
     $state.go('single-new');
     $rootScope.buttonClass = "old";
+    $rootScope.headerClass = "new";
     return $rootScope.street;
   };
-
   
+  var delegate = $ionicScrollDelegate.$getByHandle('singleScrollTop');
+  $scope.hideView = false;
   $scope.rotate = function() {
       var container = document.getElementsByClassName('container');
       container = angular.element(container);
       container.toggleClass('flipped');
       if ($rootScope.buttonClass === "old") {
         $rootScope.buttonClass = "new";
+        $rootScope.headerClass = "old";
+        $scope.hideView = false;
+        $ionicScrollDelegate.scrollTop();
       }else {
         $rootScope.buttonClass = "old";
+        $rootScope.headerClass = "new";
+        $scope.hideView = true;
+        $ionicScrollDelegate.scrollTop();
       }
   };
   

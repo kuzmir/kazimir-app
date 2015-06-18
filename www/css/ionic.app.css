@@ -7749,8 +7749,12 @@ a.button {
 .scroll {
   height: 100%; }
 
-.scroll-content {
-  background: #eee; }
+.main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%; }
 
 .flipper {
   -webkit-perspective: 1000;
@@ -8070,8 +8074,17 @@ a.button {
 .bar .button, .bar .title {
   color: #fff; }
 
-.bar-new {
+.bar-header.new {
   background-color: #40a9bc; }
-
-.bar-old {
+  .bar-header.new .button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px; }
+.bar-header.old {
   background-color: #d8c542; }
+  .bar-header.old .button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px; }

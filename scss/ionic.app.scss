@@ -139,8 +139,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .scroll{height: 100%;}
-.scroll-content {
-  background: #eee;
+
+.main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
 }
 .flipper {
   -webkit-perspective: 1000;
@@ -542,9 +547,24 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
   
 }
-.bar-new {
-  background-color: $basenew;
+.bar-header {
+  &.new {
+    background-color: $basenew;
+    .button {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      bottom: 5px;
+    }
+  }
+  &.old {
+    background-color: $baseold;
+    .button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+    }
+  }
 }
-.bar-old {
-  background-color: $baseold;
-}
+
