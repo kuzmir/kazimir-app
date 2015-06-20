@@ -7803,103 +7803,6 @@ a.button {
   -o-transform: rotateY(-180deg);
   transform: rotateY(-180deg); }
 
-flippy {
-  float: left;
-  -webkit-perspective: 600px;
-  -moz-perspective: 600px;
-  -ms-perspective: 600px;
-  perspective: 600px; }
-
-flippy-front {
-  position: absolute;
-  z-index: 900;
-  width: inherit;
-  height: inherit;
-  -webkit-transform: rotate3d(0, 0, 0, 0deg);
-  -moz-transform: rotate3d(0, 0, 0, 0deg);
-  -ms-transform: rotate3d(0, 0, 0, 0deg);
-  transform: rotate3d(0, 0, 0, 0deg);
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-flippy-back {
-  position: absolute;
-  z-index: 800;
-  width: inherit;
-  height: inherit;
-  -webkit-transform: rotate3d(0, 1, 0, -180deg);
-  -moz-transform: rotate3d(0, 1, 0, -180deg);
-  -ms-transform: rotate3d(0, 1, 0, -180deg);
-  transform: rotate3d(0, 1, 0, -180deg);
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-flippy.flipped flippy-front {
-  z-index: 900;
-  -webkit-transform: rotate3d(0, 1, 0, 180deg);
-  -moz-transform: rotate3d(0, 1, 0, 180deg);
-  -ms-transform: rotate3d(0, 1, 0, 180deg);
-  transform: rotate3d(0, 1, 0, 180deg); }
-
-flippy.flipped flippy-back {
-  z-index: 1000;
-  -webkit-transform: rotate3d(0, 0, 0, 0deg);
-  -moz-transform: rotate3d(0, 0, 0, 0deg);
-  -ms-transform: rotate3d(0, 0, 0, 0deg);
-  transform: rotate3d(0, 0, 0, 0deg); }
-
-flippy.fancy {
-  float: left;
-  text-align: left;
-  position: relative;
-  cursor: pointer;
-  width: 100%;
-  height: 100%; }
-
-flippy.fancy img {
-  height: 100%;
-  width: 100%; }
-
-flippy.fancy flippy-front {
-  float: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 900;
-  width: 100%;
-  height: 100%;
-  background: white;
-  text-align: center; }
-
-flippy.fancy flippy-front.flipped {
-  border-color: #eee;
-  /*background: #333;*/
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); }
-
-flippy.fancy flippy-back {
-  float: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 800;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ccc;
-  background: white;
-  text-align: center; }
-
 * {
   font-family: 'Open Sans'; }
 
@@ -8120,7 +8023,7 @@ flippy.fancy flippy-back {
       right: 10px; }
 
 .m-button-container {
-  bottom: 15%; }
+  bottom: 9%; }
   .m-button-container .open-map-list {
     border-radius: 50%;
     height: 45px;
@@ -8132,7 +8035,7 @@ flippy.fancy flippy-back {
       position: relative;
       color: #565656; }
   .m-button-container.active {
-    bottom: 38%; }
+    bottom: 33%; }
 
 .header-logo {
   width: 50%;

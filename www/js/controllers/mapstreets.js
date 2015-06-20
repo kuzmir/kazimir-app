@@ -15,17 +15,22 @@ angular.module('kazimir')
   });
   
   // on click go to past single view
-  $scope.singlePostOld = function ($index) {
-    $ionicViewSwitcher.nextDirection( 'back' );
+  $scope.singlePostOld = function($index) {
+    $ionicViewSwitcher.nextDirection('back');
     $rootScope.street = $index;
+    $rootScope.buttonClass = "new";
+    $rootScope.headerClass = "old";
+    $rootScope.activeView = "old";
     $state.go('single-old');
-    return $rootScope.street;
   };
+
   //on click go to present single view
-  $scope.singlePostNew = function ($index) {
+  $scope.singlePostNew = function($index) {
     $rootScope.street = $index;
+    $rootScope.buttonClass = "old";
+    $rootScope.headerClass = "new";
+    $rootScope.activeView = "new";
     $state.go('single-new');
-    return $rootScope.street;
   };
   
   var delegate = $ionicScrollDelegate.$getByHandle('mapScroll');

@@ -20,7 +20,7 @@
         <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(selectedItem)"></a>
       </div>
       <ion-content delegate-handle="mapScroll" ng-class="class" class="map-street-list">
-        <div ng-if="!selectedItem" class='map-item-kazimir'>
+        <div ng-if="!selectedItem" class='map-item-kazimir' ng-click='openMapList()'>
             <div class="map-street-item">
               <div class="list-item-buttons">
                 <div ng-model="item" class="map-item-name">

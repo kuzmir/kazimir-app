@@ -2,7 +2,7 @@
 
 angular.module('kazimir')
 
-.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, ApiService, $translate, $ionicViewSwitcher, $ionicScrollDelegate) {
+.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, ApiService, $translate, $ionicViewSwitcher, $ionicScrollDelegate, $timeout) {
 
 
   // initialize restangular resource/model
@@ -10,46 +10,52 @@ angular.module('kazimir')
     $scope.streets = data;
   });
 
+
   // on click go to past single view
   $scope.singlePostOld = function($index) {
     $ionicViewSwitcher.nextDirection('back');
     $rootScope.street = $index;
-    $state.go('single-old');
     $rootScope.buttonClass = "new";
     $rootScope.headerClass = "old";
-    return $rootScope.street;
+    $rootScope.activeView = "old";
+    $state.go('single-old');
   };
 
   //on click go to present single view
   $scope.singlePostNew = function($index) {
     $rootScope.street = $index;
-    $state.go('single-new');
     $rootScope.buttonClass = "old";
     $rootScope.headerClass = "new";
-    return $rootScope.street;
+    $rootScope.activeView = "new";
+    $state.go('single-new');
   };
   
   var delegate = $ionicScrollDelegate.$getByHandle('singleScrollTop');
-  $scope.hideView = false;
   $scope.rotate = function() {
-      var container = document.getElementsByClassName('container');
-      container = angular.element(container);
-      container.toggleClass('flipped');
-      if ($rootScope.buttonClass === "old") {
-        $rootScope.buttonClass = "new";
-        $rootScope.headerClass = "old";
-        $scope.hideView = false;
-        $ionicScrollDelegate.scrollTop();
-      }else {
-        $rootScope.buttonClass = "old";
-        $rootScope.headerClass = "new";
-        $scope.hideView = true;
-        $ionicScrollDelegate.scrollTop();
-      }
+    var container = document.getElementsByClassName('container');
+    container = angular.element(container);
+    container.toggleClass('flipped');
+    $rootScope.activeView = "";
+    if ($rootScope.headerClass === "new") {
+      $rootScope.buttonClass = "new";
+      $rootScope.headerClass = "old";
+      $timeout(function(){
+        $rootScope.activeView = "old";
+      }, 800);
+      $ionicScrollDelegate.scrollTop();
+    }else {
+      $rootScope.buttonClass = "old";
+      $rootScope.headerClass = "new";
+      $timeout(function(){
+        $rootScope.activeView = "new"
+      }, 800);
+      $ionicScrollDelegate.scrollTop();
+    }
   };
 
-  $scope.lang = 'en';//$translate.proposedLanguage();
-
+  $scope.lang = $translate.proposedLanguage();
+  alert($scope.lang);
+  
   $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };
