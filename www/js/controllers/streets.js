@@ -2,7 +2,7 @@
 
 angular.module('kazimir')
 
-.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, ApiService, $translate, $ionicViewSwitcher, $ionicScrollDelegate, $timeout) {
+.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, ApiService, $ionicViewSwitcher, $ionicScrollDelegate, $timeout, LanguageService) {
 
 
   // initialize restangular resource/model
@@ -53,8 +53,8 @@ angular.module('kazimir')
     }
   };
 
-  $scope.lang = $translate.proposedLanguage();
-  
+  $scope.lang = LanguageService.getCurrentLanguage();
+
   $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };

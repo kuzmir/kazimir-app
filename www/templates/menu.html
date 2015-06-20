@@ -18,8 +18,8 @@
 	    <div class="ws-language">
 	    	<p class="ws-navigation-header">{{"language" | translate}}</p>
 	    	<div class="ws-language-buttons">
-	    		<button class='button ws-change-language ws-language-en active' href=''><span>eng</span></button>
-	    		<button class='button ws-change-language ws-language-pl' href=''><span>pl</span></button>
+	    		<button class='button ws-change-language ws-language-en' ng-class="{active: lang == 'en'}" ng-click="setLanguage('en');"><span>eng</span></button>
+	    		<button class='button ws-change-language ws-language-pl' ng-class="{active: lang == 'pl'}" ng-click="setLanguage('pl');"><span>pl</span></button>
 	    	</div>
 	    </div>
 	    <div class="ws-button">

@@ -15,7 +15,8 @@ KazimirApp.config(function($stateProvider, $urlRouterProvider) {
     url: '/menu',
     views: {
       'container-view': {
-        templateUrl: 'templates/menu.html'
+        templateUrl: 'templates/menu.html',
+        controller: 'HomeController'
       }
     }
   })
@@ -79,7 +80,6 @@ KazimirApp.config(function(RestangularProvider){
   // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
 
   // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
-
   //RestangularProvider.setBaseUrl('http://kazimirapp.pl')
   RestangularProvider.setBaseUrl('/api');
 
@@ -88,6 +88,7 @@ KazimirApp.config(function(RestangularProvider){
 })
 
 KazimirApp.config(function($translateProvider) {
+
     $translateProvider.translations('pl', {
       sub_title: "Przewodnik z przeszłości do współczesności",
       choose_street: "Wybierz ulicę",
@@ -99,7 +100,7 @@ KazimirApp.config(function($translateProvider) {
       discover_button: "Odkrywaj"
     });
     $translateProvider.translations('en', {
-      sub_title: "A guide from past till now",
+      sub_title: "A guide from past till now and more",
       choose_street: "Choose street",
       nav_right: "Navigate right",
       nav_left: "Navigate left",
@@ -108,20 +109,32 @@ KazimirApp.config(function($translateProvider) {
       language: "Choose language: ",
       discover_button: "Discover"
     });
+
     $translateProvider.preferredLanguage("pl");
     $translateProvider.fallbackLanguage("en");
 });
 
 // Initialize the app
-KazimirApp.run(function($ionicPlatform, $translate) {
+KazimirApp.run(function($ionicPlatform, LanguageService, $translate) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
+
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+    // try to restore language
+    var language = LanguageService.getCurrentLanguage();
+    if (typeof language === 'undefined') {
+      LanguageService.setLanguage('pl');
+      $translate.use('pl');
+    } else {
+      $translate.use(language);
+    }
+
   });
 });
