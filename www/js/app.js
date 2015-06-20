@@ -79,6 +79,7 @@ KazimirApp.config(function(RestangularProvider){
   // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
 
   // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
+
   //RestangularProvider.setBaseUrl('http://kazimirapp.pl')
   RestangularProvider.setBaseUrl('/api');
 
@@ -88,10 +89,24 @@ KazimirApp.config(function(RestangularProvider){
 
 KazimirApp.config(function($translateProvider) {
     $translateProvider.translations('pl', {
-        choose_street: "Wybierz ulicę"
+      sub_title: "Przewodnik z przeszłości do współczesności",
+      choose_street: "Wybierz ulicę",
+      nav_right: "Nawiguj w prawo",
+      nav_left: "Nawiguj w lewo",
+      discover_past: "by odkrywać przeszłość",
+      discover_present: "by odkrywać współczesność",
+      language: "Wybierz język: ",
+      discover_button: "Odkrywaj"
     });
     $translateProvider.translations('en', {
-        choose_street: "Choose street"
+      sub_title: "A guide from past till now",
+      choose_street: "Choose street",
+      nav_right: "Navigate right",
+      nav_left: "Navigate left",
+      discover_past: "to discover past time",
+      discover_present: "to enjoy present time",
+      language: "Choose language: ",
+      discover_button: "Discover"
     });
     $translateProvider.preferredLanguage("pl");
     $translateProvider.fallbackLanguage("en");
@@ -108,11 +123,5 @@ KazimirApp.run(function($ionicPlatform, $translate) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
-    $translate.use('pl').then(function(data) {
-      console.log("SUCCESS -> " + data);
-    }, function(error) {
-      console.log("ERROR -> " + error);
-    });
   });
 });

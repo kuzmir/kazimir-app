@@ -54,7 +54,7 @@ angular.module('kazimir')
   };
 
   $scope.lang = $translate.proposedLanguage();
-
+  
   $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };
