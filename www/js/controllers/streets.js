@@ -1,28 +1,27 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, Restangular, $translate, $ionicViewSwitcher, $ionicScrollDelegate) {
+
+.controller('StreetsController', function($scope, $rootScope, $state, $ionicHistory, ApiService, $translate, $ionicViewSwitcher, $ionicScrollDelegate) {
+
 
   // initialize restangular resource/model
-  var Street = Restangular.all('streets');
-
-  // get the street list
-  Street.getList().then(function(streets){
-    // pass all data to scope
-    // console.log('Streets loaded:', streets);
-    $scope.streets = streets;
+  ApiService.getStreets().then(function(data) {
+    $scope.streets = data;
   });
+
   // on click go to past single view
-  $scope.singlePostOld = function ($index) {
-    $ionicViewSwitcher.nextDirection( 'back' );
+  $scope.singlePostOld = function($index) {
+    $ionicViewSwitcher.nextDirection('back');
     $rootScope.street = $index;
     $state.go('single-old');
     $rootScope.buttonClass = "new";
     $rootScope.headerClass = "old";
     return $rootScope.street;
   };
+
   //on click go to present single view
-  $scope.singlePostNew = function ($index) {
+  $scope.singlePostNew = function($index) {
     $rootScope.street = $index;
     $state.go('single-new');
     $rootScope.buttonClass = "old";
@@ -48,14 +47,15 @@ angular.module('kazimir')
         $ionicScrollDelegate.scrollTop();
       }
   };
-  
+
   $scope.lang = 'en';//$translate.proposedLanguage();
 
   $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };
-  $scope.myGoBackForward =function(){
-    $ionicViewSwitcher.nextDirection( 'forward' );
+
+  $scope.myGoBackForward = function() {
+    $ionicViewSwitcher.nextDirection('forward');
     $ionicHistory.goBack();
   };
 });

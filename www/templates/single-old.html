@@ -12,7 +12,7 @@
             <div class="single-content">
               <div ng-repeat="present in street.places.present">
                 <ion-slide-box active-slide="activeSlide" class="post-slider">
-                  <ion-slide ng-repeat="photo in present.photos">
+                  <ion-slide ng-repeat="photo in present.photos" dynamic-slides="present.photos">
                     <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
                   </ion-slide>
                 </ion-slide-box>
@@ -27,7 +27,7 @@
            <div class="single-content"> 
               <div ng-repeat="past in street.places.past">     
                 <ion-slide-box active-slide="activeSlide" class="post-slider">
-                  <ion-slide ng-repeat="photo in past.photos">
+                  <ion-slide ng-repeat="photo in past.photos" dynamic-slides="past.photos">
                     <div class="sc-slide"><img ng-src="{{photo.images.medium}}"></div>
                   </ion-slide>
                 </ion-slide-box>

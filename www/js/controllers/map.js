@@ -1,31 +1,28 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('MapController', function($scope, $rootScope, Restangular) {
+.controller('MapController', function($scope, $rootScope, ApiService) {
 
-  // initialize restangular resource/model
-  var Street = Restangular.all('streets');
-
-  // get the street list
-  Street.getList().then(function(streets){
-    // pass all data to scope
-    // TODO: check why streets are not rendered?
-    $scope.streets = streets;
+  // Get the street list from API
+  ApiService.getStreets().then(function(data) {
+    $scope.streets = data;
 
     // Adding path for each street to display polylines
-    streets.forEach(function(street) {
+    $scope.streets.forEach(function(street) {
       street.path = [];
-      var latLangPath = street.path_string.split(";");
-      latLangPath.forEach(function(value){
-        var latlng = value.split(",");
+      var latLangPath = street.path_string.split(';');
+      latLangPath.forEach(function(value) {
+        var latlng = value.split(',');
         var location = new google.maps.LatLng(latlng[0], latlng[1]);
         street.path.push(location);
       });
     });
   });
+
   $rootScope.$on('streetSelected', function(event, street) {
-    $scope.selectedStreet  = street; 
-  })
+    $scope.selectedStreet  = street;
+  });
+
   $scope.map = {
     center: {
       latitude: 50.0491111,
@@ -50,11 +47,12 @@ angular.module('kazimir')
       weight: 3
     }
   }
-  $scope.getStroke = function(street){
 
-    if($scope.selectedStreet && ($scope.selectedStreet.id   === street.id)) {
+  $scope.getStroke = function(street) {
+
+    if ($scope.selectedStreet && $scope.selectedStreet.id === street.id) {
       return $scope.pathOptions.selectedStroke;
-    }else {
+    } else {
       return $scope.pathOptions.stroke;
     }
   };
