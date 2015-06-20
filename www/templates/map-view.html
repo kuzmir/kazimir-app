@@ -1,7 +1,7 @@
 <ion-view>
   <ion-header-bar class="list-bar">
     <div class="header-logo">
-      <a nav-direction='exit' href='#/menu'><img class="title-image" src="img/kazimir_logotype.svg" /></a>   
+      <a nav-direction='exit' href='#/menu'><img class="title-image" src="img/kazimir_logotype.svg" /></a>
     </div>
     <div class="header-nav">
       <a class='button button-icon icon custom-icon' nav-direction='enter' href='#/list-view'><img src="img/icon_list.svg"></a>
@@ -11,6 +11,10 @@
     <div id="map" data-tap-disabled="true" ng-controller="MapController">
       <ui-gmap-google-map center="map.center" zoom="map.zoom" options="mapOptions">
         <ui-gmap-polyline ng-repeat="s in streets" path="s.path" stroke="getStroke(s)" visible="true"></ui-gmap-polyline>
+        <ui-gmap-marker ng-if="userLocation.visible" idKey="userLocation.id"
+            coords="userLocation.coords"
+            options="userLocation.options">
+</ui-gmap-marker>
       </ui-gmap-google-map>
     </div>
     <div ng-controller="MapStreetsController">
@@ -38,8 +42,8 @@
               </div>
             </div>
         </div>
-      </ion-content>  
-      <div ng-class="class" class='button-container m-button-container'> 
+      </ion-content>
+      <div ng-class="class" class='button-container m-button-container'>
         <a class='button button-icon open-map-list' ng-click='openMapList()'><i class="icon ion-more"></i></a>
       </div>
     </div>
