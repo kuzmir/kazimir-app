@@ -29,7 +29,7 @@ angular.module('kazimir')
     $rootScope.activeView = "new";
     $state.go('single-new');
   };
-  
+
   var delegate = $ionicScrollDelegate.$getByHandle('singleScrollTop');
   $scope.rotate = function() {
     var container = document.getElementsByClassName('container');
@@ -54,8 +54,7 @@ angular.module('kazimir')
   };
 
   $scope.lang = $translate.proposedLanguage();
-  alert($scope.lang);
-  
+
   $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };

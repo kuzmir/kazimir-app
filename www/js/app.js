@@ -79,7 +79,8 @@ KazimirApp.config(function(RestangularProvider){
   // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
 
   // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
-  RestangularProvider.setBaseUrl('http://kazimirapp.pl')
+  //RestangularProvider.setBaseUrl('http://kazimirapp.pl')
+  RestangularProvider.setBaseUrl('/api');
 
   // always request JSON format
   RestangularProvider.setRequestSuffix('.json');
@@ -95,6 +96,7 @@ KazimirApp.config(function($translateProvider) {
     $translateProvider.preferredLanguage("pl");
     $translateProvider.fallbackLanguage("en");
 });
+
 // Initialize the app
 KazimirApp.run(function($ionicPlatform, $translate) {
   $ionicPlatform.ready(function() {
@@ -107,14 +109,10 @@ KazimirApp.run(function($ionicPlatform, $translate) {
       StatusBar.styleDefault();
     }
 
-    if(typeof navigator.globalization !== "undefined") {
-      navigator.globalization.getPreferredLanguage(function(language) {
-          $translate.use((language.value).split("-")[0]).then(function(data) {
-              console.log("SUCCESS -> " + data);
-          }, function(error) {
-              console.log("ERROR -> " + error);
-          });
-      }, null);
-    }
+    $translate.use('pl').then(function(data) {
+      console.log("SUCCESS -> " + data);
+    }, function(error) {
+      console.log("ERROR -> " + error);
+    });
   });
-})
+});
