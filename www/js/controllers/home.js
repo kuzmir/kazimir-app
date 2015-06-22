@@ -2,7 +2,7 @@
 
 // Home screen controller
 angular.module('kazimir')
-.controller('HomeController', function($scope, LanguageService, $translate) {
+.controller('HomeController', function($scope, LanguageService, $translate, $state) {
 
   $scope.setLanguage = function(lang){
     LanguageService.setLanguage(lang);

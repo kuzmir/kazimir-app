@@ -213,7 +213,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   text-align: center;
   height: 100%;
   position: relative;
-  padding: 15%;
+  padding: 10%;
   .ws-logo-subtitle {
     font-weight: bold;
     font-size: 18px;
@@ -233,7 +233,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     font-weight: 300; 
   }
   .ws-language {
-    padding-top: 10px;
+    padding-top: 20px;
+    height: 15vh;
   }
   .ws-language-buttons {
     text-transform: uppercase;
@@ -267,46 +268,47 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   .ws-border-bottom {
     border-bottom: 1px solid $graylogo;
     padding: 10px 0;
+    margin-top: 10px;
   }
 }
 .ws-logo {
+  height: 28vh;
   img {
-    width: 100%;
+    width: 50%;
     height: auto;
   }
 }
 .ws-navigation {
+  height: 30vh;
   .ws-naviagation-left {
     position: relative;
-    &:before {
-      display: block;
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      top: 20%;
-      content: ' ';
-      overflow: hidden;
-      background: url(../img/welcome_screen_chevron_left.svg) no-repeat;
-
-    }
+  }
+  .ws-button-left {
+    background: url(../img/welcome_screen_chevron_left.svg) no-repeat;
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20%;
+    border: none;
   }
   .ws-naviagation-right {
     position: relative;
-    &:before {
-      display: block;
-      width: 23px;
-      height: 40px;
-      position: absolute;
-      top: 20%;
-      right: 0;
-      content: ' ';
-      overflow: hidden;
-      background: url(../img/welcome_screen_chevron_right.svg) no-repeat;
-    }
+  }
+  .ws-button-right {
+    display: block;
+    width: 23px;
+    height: 40px;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    background: url(../img/welcome_screen_chevron_right.svg) no-repeat;
+    border: none;
   }
 }
 .ws-button {
-  padding: 30px 0 0 0;
+  padding: 15px 0 0 0;
+  height: 20vh;
   .ws-gotit {
     width: 100%;
     background-color: $basenew;

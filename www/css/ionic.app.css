@@ -7810,7 +7810,7 @@ a.button {
   text-align: center;
   height: 100%;
   position: relative;
-  padding: 15%; }
+  padding: 10%; }
   .welcome-screen .ws-logo-subtitle {
     font-weight: bold;
     font-size: 18px;
@@ -7824,7 +7824,8 @@ a.button {
   .welcome-screen .ws-navigation-description {
     font-weight: 300; }
   .welcome-screen .ws-language {
-    padding-top: 10px; }
+    padding-top: 20px;
+    height: 15vh; }
   .welcome-screen .ws-language-buttons {
     text-transform: uppercase; }
     .welcome-screen .ws-language-buttons .ws-change-language {
@@ -7846,42 +7847,45 @@ a.button {
           color: #fff;
           font-weight: 600; }
       .welcome-screen .ws-language-buttons .ws-change-language span {
-        position: relative;
-        top: 5px; }
+        position: relative; }
   .welcome-screen .ws-border-bottom {
     border-bottom: 1px solid #757575;
-    padding: 10px 0; }
+    padding: 10px 0;
+    margin-top: 10px; }
 
-.ws-logo img {
-  width: 100%;
-  height: auto; }
+.ws-logo {
+  height: 28vh; }
+  .ws-logo img {
+    width: 50%;
+    height: auto; }
 
-.ws-navigation .ws-naviagation-left {
-  position: relative; }
-  .ws-navigation .ws-naviagation-left:before {
+.ws-navigation {
+  height: 30vh; }
+  .ws-navigation .ws-naviagation-left {
+    position: relative; }
+  .ws-navigation .ws-button-left {
+    background: url(../img/welcome_screen_chevron_left.svg) no-repeat;
     display: block;
     width: 40px;
     height: 40px;
     position: absolute;
     top: 20%;
-    content: ' ';
-    overflow: hidden;
-    background: url(../img/welcome_screen_chevron_left.svg) no-repeat; }
-.ws-navigation .ws-naviagation-right {
-  position: relative; }
-  .ws-navigation .ws-naviagation-right:before {
+    border: none; }
+  .ws-navigation .ws-naviagation-right {
+    position: relative; }
+  .ws-navigation .ws-button-right {
     display: block;
     width: 23px;
     height: 40px;
     position: absolute;
     top: 20%;
     right: 0;
-    content: ' ';
-    overflow: hidden;
-    background: url(../img/welcome_screen_chevron_right.svg) no-repeat; }
+    background: url(../img/welcome_screen_chevron_right.svg) no-repeat;
+    border: none; }
 
 .ws-button {
-  padding: 30px 0 0 0; }
+  padding: 15px 0 0 0;
+  height: 20vh; }
   .ws-button .ws-gotit {
     width: 100%;
     background-color: #40a9bc;

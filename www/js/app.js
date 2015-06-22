@@ -90,17 +90,17 @@ KazimirApp.config(function(RestangularProvider){
 KazimirApp.config(function($translateProvider) {
 
     $translateProvider.translations('pl', {
-      sub_title: "Przewodnik z przeszłości do współczesności",
+      sub_title: "Przewodnik o dwóch kulturach na Kazimierzu",
       choose_street: "Wybierz ulicę",
-      nav_right: "Nawiguj w prawo",
+      nav_right: "Idź w prawo",
       nav_left: "Nawiguj w lewo",
       discover_past: "by odkrywać przeszłość",
-      discover_present: "by odkrywać współczesność",
+      discover_present: "i zobacz jak jest teraz",
       language: "Wybierz język: ",
       discover_button: "Odkrywaj"
     });
     $translateProvider.translations('en', {
-      sub_title: "A guide from past till now and more",
+      sub_title: "A guide and a tale of two cultures on Kazimierz",
       choose_street: "Choose street",
       nav_right: "Navigate right",
       nav_left: "Navigate left",
