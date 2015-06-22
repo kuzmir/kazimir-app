@@ -7897,6 +7897,7 @@ a.button {
 .item-kazimir {
   padding: 0;
   position: relative;
+  min-height: 200px;
   height: 35vh;
   border: none; }
   .item-kazimir .street-item {
@@ -7907,7 +7908,8 @@ a.button {
       height: 30px;
       width: 30px;
       border-radius: 50%;
-      color: #fff; }
+      color: #fff;
+      font-size: 30px; }
       .item-kazimir .street-item .button:before {
         position: relative;
         bottom: 6px; }
@@ -7938,9 +7940,9 @@ a.button {
     top: 0;
     z-index: 10; }
     .list-item-buttons .button.ion-chevron-left {
-      left: 0; }
+      left: 10px; }
     .list-item-buttons .button.ion-chevron-right {
-      right: 0; }
+      right: 10px; }
 
 .item-name {
   width: 100%;

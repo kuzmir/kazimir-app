@@ -67,7 +67,6 @@ KazimirApp.config(function($stateProvider, $urlRouterProvider) {
 // Setup Google Maps integration
 KazimirApp.config(function(uiGmapGoogleMapApiProvider){
   uiGmapGoogleMapApiProvider.configure({
-    key: 'AIzaSyDYz04VOan5pJY5HhQeWiVap0a7UjUba4A',
     libraries: 'geometry',
     v: '3.17'
   })

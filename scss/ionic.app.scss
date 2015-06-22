@@ -323,6 +323,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .item-kazimir {
   padding: 0;
   position: relative;
+  min-height: 200px;
   height: 35vh;
   border: none;
   .street-item {
@@ -334,6 +335,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
       width: 30px;
       border-radius: 50%;
       color: $light;
+      font-size: 30px;
       &:before {
         position:relative;
         bottom: 6px;
@@ -370,10 +372,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     top: 0;
     z-index: 10;
     &.ion-chevron-left {
-      left: 0;
+      left: 10px;
     }
     &.ion-chevron-right {
-      right: 0;
+      right: 10px;
     }
   }
 }
