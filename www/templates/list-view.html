@@ -15,6 +15,8 @@
           <div class="street-item">
             <img ng-src="{{street.places.present[0].photos[0].images.medium}}">
             <div class="street-cover"></div>
+            <div class="street-click-mask-old" ng-click="singlePostOld(street)"></div>
+            <div class="street-click-mask-new" ng-click="singlePostNew(street)"></div>
             <div class="list-item-buttons">
               <button class="button button-icon ion-chevron-left" nav-direction="forward" on-swipe="singlePostOld(street)" ng-click="singlePostOld(street)"></button>
               <div ng-model="item" class="item-name">{{street.name}}</div>

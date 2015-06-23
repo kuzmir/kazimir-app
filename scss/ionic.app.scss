@@ -362,6 +362,24 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     background-image: -webkit-linear-gradient(top left, #323232 0%, #000000 100%);
     background-image: linear-gradient(to bottom right, #323232 0%, #000000 100%);
   }
+  .street-click-mask-old {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+  }
+  .street-click-mask-new {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+  }
 }
 .list-item-buttons {
   position: relative;
@@ -436,6 +454,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   background-color: rgba(224, 224, 224, 0.8);
   bottom: 0;
   top: inherit;
+  z-index: 1;
   &.active {
     height: 37%;
   }
@@ -484,7 +503,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // List on the map view
 
 .m-button-container {
-  bottom: 9%;
+  bottom: 10%;
+  z-index: 0;
   .open-map-list {
     border-radius: 50%;
     height: 45px;
@@ -498,7 +518,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     }
   }
   &.active {
-    bottom: 33%;
+    bottom: 34%;
   }
 }
 // Header
