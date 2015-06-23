@@ -2,27 +2,33 @@
 
 // Home screen controller
 angular.module('kazimir')
-.controller('HomeController', function($scope, $ionicLoading, LanguageService, ApiService, $translate) {
+.controller('HomeController', function($scope, $ionicLoading, $translate, $timeout, LanguageService, ApiService) {
 
-  $scope.setLanguage = function(lang){
+  // initialize default variables
+  $scope.lang = LanguageService.getCurrentLanguage();
+  $scope.loadingError = null;
+
+  // define function to set language
+  $scope.setLanguage = function(lang) {
     LanguageService.setLanguage(lang);
     $scope.lang = lang;
   }
 
-  $scope.lang = LanguageService.getCurrentLanguage();
-
-  var loading = ApiService.initialize();
-
   // perform initial loading
-  $ionicLoading.show({
-    template: $translate.instant('loading')
+  var apiLoader = ApiService.initialize();
+
+  $timeout(function() {
+    apiLoader.then(function() {
+      $ionicLoading.hide();
+    }, function(err){
+      $ionicLoading.hide();
+      $scope.loadingError = true;
+    });
   });
 
-  loading.then(function() {
-    $ionicLoading.hide();
-  }, function(err){
-    $ionicLoading.hide();
-    alert('Error while loading data!')
+  // show the loading indicator
+  $ionicLoading.show({
+    template: $translate.instant('loading')
   });
 
 });

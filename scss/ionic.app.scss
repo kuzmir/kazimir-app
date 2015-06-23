@@ -180,7 +180,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
          -o-backface-visibility: hidden;
             backface-visibility: hidden;
   }
-  
+
 }
 
 .flipper .container .front {
@@ -227,10 +227,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
 
   .ws-navigation-header {
-    font-weight: 600; 
+    font-weight: 600;
   }
   .ws-navigation-description {
-    font-weight: 300; 
+    font-weight: 300;
   }
   .ws-language {
     padding-top: 20px;
@@ -316,6 +316,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
 }
 
+
+.ws-loading-error{
+  padding: 10px 0 0 0;
+  font-size: 10px;
+  color: #c00;
+  text-align: center;
+}
+
 //LIST VIEW
 .bar-header {
   background-color: $light;
@@ -340,7 +348,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
         position:relative;
         bottom: 6px;
       }
-    }   
+    }
   }
   img {
     width: 100%;
@@ -409,7 +417,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Button switch and animation
 
 .button-container {
-  position:fixed; 
+  position:fixed;
   bottom: 5%;
   left:0px;
   right:0px;
@@ -432,8 +440,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Map view
 
-.angular-google-map-container { 
-  min-height: 400px; 
+.angular-google-map-container {
+  min-height: 400px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -551,7 +559,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   top: 100px;
 }
 
-//SINGLE ITEM 
+//SINGLE ITEM
 
 .single-content {
   color: $basefontgray;
@@ -570,7 +578,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   .title {
     color: $light;
   }
-  
+
 }
 .bar-header {
   &.new {

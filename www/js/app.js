@@ -96,7 +96,8 @@ KazimirApp.config(function($translateProvider) {
     discover_present: "i zobacz jak jest teraz",
     language: "Wybierz język: ",
     discover_button: "Odkrywaj",
-    loading: 'Wczytywanie danych...'
+    loading: 'Wczytywanie danych...',
+    loading_error: "Problem z wczytaniem danych :-("
   });
 
   $translateProvider.translations('en', {
@@ -108,7 +109,8 @@ KazimirApp.config(function($translateProvider) {
     discover_present: "to enjoy present time",
     language: "Choose language: ",
     discover_button: "Discover",
-    loading: 'Loading data...'
+    loading: 'Loading data...',
+    loading_error: "Problem z with loading data :-("
   });
 
   $translateProvider.preferredLanguage("pl");

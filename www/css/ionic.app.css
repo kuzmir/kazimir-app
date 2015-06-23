@@ -7891,6 +7891,12 @@ a.button {
     background-color: #40a9bc;
     color: #fff; }
 
+.ws-loading-error {
+  padding: 10px 0 0 0;
+  font-size: 10px;
+  color: #c00;
+  text-align: center; }
+
 .bar-header {
   background-color: #fff; }
 
