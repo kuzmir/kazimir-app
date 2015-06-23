@@ -53,24 +53,42 @@ angular.module('kazimir')
       longitude: null
     },
     options: {
-      icon: '/img/user.png'
+      icon: '/img/user.png',
+      optimized: false,
+      clickable: false,
+      opacity: 0.9
     },
     visible: false
   };
 
   // watch location
-  var geolocation = $cordovaGeolocation.getCurrentPosition({
+  var watch = $cordovaGeolocation.watchPosition({
+    frequency: 5000,
     timeout: 10000,
+    maximumAge: 10000,
     enableHighAccuracy: false
   });
 
-  geolocation.then(function(position) {
-    // create point
-    $scope.userLocation.coords.latitude = position.coords.latitude;
-    $scope.userLocation.coords.longitude = position.coords.longitude;
+  // geolocation callback to adjust pin coordinates
+  var onPositionUpdate = function(pos) {
+    $scope.userLocation.coords.latitude = pos.coords.latitude;
+    $scope.userLocation.coords.longitude = pos.coords.longitude;
     $scope.userLocation.visible = true;
-  }, function(err) {
-    console.log(err);
+  };
+
+  // handle some errors
+  var onGeolocationError = function(err) {
+    console.log('Error:', err);
+  };
+
+  // pass to promise
+  watch.then(null, onGeolocationError, onPositionUpdate);
+
+  // clear watch after scope of controller is destroyed
+  $scope.$on('$destroy', function() {
+    if (watch) {
+      watch.clearWatch();
+    }
   });
 
 });
