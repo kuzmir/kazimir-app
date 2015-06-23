@@ -79,7 +79,7 @@ KazimirApp.config(function(RestangularProvider){
   // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
 
   // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
-  //RestangularProvider.setBaseUrl('http://kazimirapp.pl')
+  // RestangularProvider.setBaseUrl('http://kazimirapp.pl');
   RestangularProvider.setBaseUrl('/api');
 
   // always request JSON format
@@ -88,52 +88,50 @@ KazimirApp.config(function(RestangularProvider){
 
 KazimirApp.config(function($translateProvider) {
 
-    $translateProvider.translations('pl', {
-      sub_title: "Przewodnik o dwóch kulturach na Kazimierzu",
-      choose_street: "Wybierz ulicę",
-      nav_right: "Idź w prawo",
-      nav_left: "Nawiguj w lewo",
-      discover_past: "by odkrywać przeszłość",
-      discover_present: "i zobacz jak jest teraz",
-      language: "Wybierz język: ",
-      discover_button: "Odkrywaj"
-    });
-    $translateProvider.translations('en', {
-      sub_title: "A guide and a tale of two cultures on Kazimierz",
-      choose_street: "Choose street",
-      nav_right: "Navigate right",
-      nav_left: "Navigate left",
-      discover_past: "to discover past time",
-      discover_present: "to enjoy present time",
-      language: "Choose language: ",
-      discover_button: "Discover"
-    });
+  $translateProvider.translations('pl', {
+    sub_title: "Przewodnik o dwóch kulturach na Kazimierzu",
+    choose_street: "Wybierz ulicę",
+    nav_right: "Idź w prawo",
+    nav_left: "Nawiguj w lewo",
+    discover_past: "by odkrywać przeszłość",
+    discover_present: "i zobacz jak jest teraz",
+    language: "Wybierz język: ",
+    discover_button: "Odkrywaj",
+    loading: 'Wczytywanie danych...'
+  });
 
-    $translateProvider.preferredLanguage("pl");
-    $translateProvider.fallbackLanguage("en");
+  $translateProvider.translations('en', {
+    sub_title: "A guide and a tale of two cultures on Kazimierz",
+    choose_street: "Choose street",
+    nav_right: "Navigate right",
+    nav_left: "Navigate left",
+    discover_past: "to discover past time",
+    discover_present: "to enjoy present time",
+    language: "Choose language: ",
+    discover_button: "Discover",
+    loading: 'Loading data...'
+  });
+
+  $translateProvider.preferredLanguage("pl");
+  $translateProvider.fallbackLanguage("en");
 });
 
 // Initialize the app
-KazimirApp.run(function($ionicPlatform, LanguageService, $translate) {
+KazimirApp.run(function($ionicPlatform, LanguageService) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
+    if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
 
-    if(window.StatusBar) {
+    if (window.StatusBar) {
       StatusBar.styleDefault();
     }
 
-    // try to restore language
-    var language = LanguageService.getCurrentLanguage();
-    if (typeof language === 'undefined') {
-      LanguageService.setLanguage('pl');
-      $translate.use('pl');
-    } else {
-      $translate.use(language);
-    }
+    // try to restore language and set it
+    LanguageService.initializeWithDefaultLanguage('pl');
 
   });
 });

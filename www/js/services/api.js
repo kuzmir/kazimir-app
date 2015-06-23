@@ -7,12 +7,19 @@ angular.module('kazimir')
 
   var deferred = $q.defer();
 
+  // perform initial request by loading streets
+  // returns promise
+  var initialize = function() {
+    return getStreets();
+  };
+
   // loads the streets form API
   var getStreets = function() {
     if (streets) {
       // resolve promise immediately
       deferred.resolve(streets);
     } else {
+
       // get the street list
       var StreetApi = Restangular.all('streets').getList();
 
@@ -49,6 +56,7 @@ angular.module('kazimir')
 
   // expose api
   return {
+    initialize: initialize,
     getStreets: getStreets
   };
 
