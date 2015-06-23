@@ -20,6 +20,9 @@ angular.module('kazimir')
 
   loading.then(function() {
     $ionicLoading.hide();
+  }, function(err){
+    $ionicLoading.hide();
+    alert('Error while loading data!')
   });
 
 });

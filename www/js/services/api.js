@@ -29,6 +29,8 @@ angular.module('kazimir')
         // cache converted result
         streets = convertPaths(streetData);
         deferred.resolve(streets);
+      }, function(error) {
+        deferred.reject(error);
       });
     }
 
