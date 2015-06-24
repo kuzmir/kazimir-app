@@ -79,6 +79,7 @@ KazimirApp.config(function(RestangularProvider) {
 
   // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
   // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
+  // Uncomment line below for development on local browser
   // RestangularProvider.setBaseUrl('/api');
 
   // always request JSON format

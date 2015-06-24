@@ -20,7 +20,7 @@ $basedark: #3e3e3e;
 $baseold: #d8c542;
 $basenew: #40a9bc;
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+$ionicons-font-path: "../lib/ionic/release/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
