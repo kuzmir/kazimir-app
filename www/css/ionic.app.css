@@ -7818,7 +7818,9 @@ a.button {
     color: #757575; }
   .welcome-screen .ws-navigation, .welcome-screen .ws-language {
     font-size: 16px;
-    color: #3e3e3e; }
+    color: #3e3e3e;
+    display: inline-block;
+    width: 100%; }
   .welcome-screen .ws-navigation-header {
     font-weight: 600; }
   .welcome-screen .ws-navigation-description {
@@ -7854,7 +7856,9 @@ a.button {
     margin-top: 10px; }
 
 .ws-logo {
-  height: 28vh; }
+  height: 26vh;
+  display: inline-block;
+  width: 100%; }
   .ws-logo img {
     width: 50%;
     height: auto; }
@@ -8033,7 +8037,7 @@ a.button {
 
 .item-label {
   width: 100%;
-  height: 11%;
+  height: 13%;
   position: absolute;
   background-color: rgba(224, 224, 224, 0.8);
   bottom: 0;
@@ -8042,17 +8046,17 @@ a.button {
   .item-label .selected-item {
     width: 100%;
     text-align: center;
-    margin: 22px 0; }
+    margin: 30px 0; }
   .item-label a {
     position: absolute;
-    top: 10px; }
+    top: 20px; }
     .item-label a.ion-chevron-left {
       left: 10px; }
     .item-label a.ion-chevron-right {
       right: 10px; }
 
 .m-button-container {
-  bottom: 10%;
+  bottom: 14%;
   z-index: 0; }
   .m-button-container .open-map-list {
     border-radius: 50%;
@@ -8065,7 +8069,7 @@ a.button {
       position: relative;
       color: #565656; }
   .m-button-container.active {
-    bottom: 34%; }
+    bottom: 38%; }
 
 .header-logo {
   width: 50%;
