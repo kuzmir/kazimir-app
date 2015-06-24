@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kazimir')
-.controller('MapController', function($scope, $rootScope, ApiService, $cordovaGeolocation) {
+.controller('MapController', function($scope, $rootScope, $cordovaGeolocation, ApiService) {
 
   // Get the street list from API
   ApiService.getStreets().then(function(data) {
@@ -61,14 +61,6 @@ angular.module('kazimir')
     visible: false
   };
 
-  // watch location
-  var watch = $cordovaGeolocation.watchPosition({
-    frequency: 5000,
-    timeout: 10000,
-    maximumAge: 10000,
-    enableHighAccuracy: false
-  });
-
   // geolocation callback to adjust pin coordinates
   var onPositionUpdate = function(pos) {
     $scope.userLocation.coords.latitude = pos.coords.latitude;
@@ -78,17 +70,20 @@ angular.module('kazimir')
 
   // handle some errors
   var onGeolocationError = function(err) {
-    console.log('Error:', err);
+    console.log('Error:', err.message);
   };
 
-  // pass to promise
-  watch.then(null, onGeolocationError, onPositionUpdate);
+  // get location
+  $cordovaGeolocation.getCurrentPosition({
+    timeout: 30000,
+    enableHighAccuracy: false
+  }).then(onPositionUpdate, onGeolocationError);
 
   // clear watch after scope of controller is destroyed
-  $scope.$on('$destroy', function() {
-    if (watch) {
-      watch.clearWatch();
-    }
-  });
+  // $scope.$on('$destroy', function() {
+  //   if (watch) {
+  //     watch.clearWatch();
+  //   }
+  // });
 
 });
