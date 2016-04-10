@@ -75,12 +75,12 @@ KazimirApp.config(function(uiGmapGoogleMapApiProvider){
 // Setup Restangular to connect to API resources
 KazimirApp.config(function(RestangularProvider) {
   // For production API should point to main server ->
-  RestangularProvider.setBaseUrl('http://kazimirapp.pl');
+  // RestangularProvider.setBaseUrl('http://kazimirapp.pl');
 
   // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
   // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
   // Uncomment line below for development on local browser
-  // RestangularProvider.setBaseUrl('/api');
+  RestangularProvider.setBaseUrl('/api');
 
   // always request JSON format
   RestangularProvider.setRequestSuffix('.json');
@@ -89,26 +89,28 @@ KazimirApp.config(function(RestangularProvider) {
 KazimirApp.config(function($translateProvider) {
 
   $translateProvider.translations('pl', {
-    sub_title: "Przewodnik o dwóch kulturach na Kazimierzu",
+    sub_title: "Witaj w Krakowie",
     choose_street: "Wybierz ulicę",
     nav_right: "Idź w prawo",
     nav_left: "Nawiguj w lewo",
+    click_reverse: "Kliknij przycisk 'odwróć' by zmieniać pomiędzy przeszłością i teraz",
     discover_past: "by odkrywać przeszłość",
     discover_present: "i zobacz jak jest teraz",
-    language: "Wybierz język: ",
+    language: "Proszę wybierz swój język: ",
     discover_button: "Odkrywaj",
     loading: 'Wczytywanie danych...',
     loading_error: "Problem z wczytaniem danych :-("
   });
 
   $translateProvider.translations('en', {
-    sub_title: "A guide and a tale of two cultures on Kazimierz",
+    sub_title: "Welcome to Kraków",
     choose_street: "Choose street",
     nav_right: "Navigate right",
     nav_left: "Navigate left",
+    click_reverse: "Click reverse button to change between past and present",
     discover_past: "to discover past time",
     discover_present: "to enjoy present time",
-    language: "Choose language: ",
+    language: "Please choose your language: ",
     discover_button: "Discover",
     loading: 'Loading data...',
     loading_error: "Problem z with loading data :-("

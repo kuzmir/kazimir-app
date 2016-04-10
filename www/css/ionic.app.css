@@ -2695,12 +2695,8 @@ ion-infinite-scroll {
     color: #666666;
     font-size: 30px;
     color: #666666; }
-  ion-infinite-scroll .icon:before, ion-infinite-scroll .spinner {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
   ion-infinite-scroll:not(.active) .spinner, ion-infinite-scroll:not(.active) .icon:before {
-    -webkit-transform: translate3d(-1000px, 0, 0);
-    transform: translate3d(-1000px, 0, 0); }
+    display: none; }
 
 .overflow-scroll {
   overflow-x: hidden;
@@ -3043,6 +3039,8 @@ a.subdued {
   right: 0;
   left: 0;
   z-index: 9;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 5px;
   width: 100%;
@@ -4108,6 +4106,13 @@ ion-tabs.tabs-color-active-dark .tab-item {
       -ms-transition: color 0.2s ease;
       -o-transition: color 0.2s ease;
       transition: color 0.2s ease; }
+  .tabs-top.tabs-striped:not(.tabs-icon-left):not(.tabs-icon-top) .tab-item.tab-item-active .tab-title, .tabs-top.tabs-striped:not(.tabs-icon-left):not(.tabs-icon-top) .tab-item.tab-item-active i, .tabs-top.tabs-striped:not(.tabs-icon-left):not(.tabs-icon-top) .tab-item.active .tab-title, .tabs-top.tabs-striped:not(.tabs-icon-left):not(.tabs-icon-top) .tab-item.active i, .tabs-top.tabs-striped:not(.tabs-icon-left):not(.tabs-icon-top) .tab-item.activated .tab-title, .tabs-top.tabs-striped:not(.tabs-icon-left):not(.tabs-icon-top) .tab-item.activated i {
+    display: block;
+    margin-top: -1px; }
+  .tabs-top.tabs-striped.tabs-icon-left .tab-item {
+    margin-top: 1px; }
+    .tabs-top.tabs-striped.tabs-icon-left .tab-item.tab-item-active .tab-title, .tabs-top.tabs-striped.tabs-icon-left .tab-item.tab-item-active i, .tabs-top.tabs-striped.tabs-icon-left .tab-item.active .tab-title, .tabs-top.tabs-striped.tabs-icon-left .tab-item.active i, .tabs-top.tabs-striped.tabs-icon-left .tab-item.activated .tab-title, .tabs-top.tabs-striped.tabs-icon-left .tab-item.activated i {
+      margin-top: -0.1em; }
 
 /* Allow parent element to have tabs-top */
 /* If you change this, change platform.scss as well */
@@ -4163,11 +4168,11 @@ ion-tabs.tabs-color-active-dark .tab-item {
 
 .tabs-icon-left.tabs .tab-item, .tabs-icon-left > .tabs .tab-item, .tabs-icon-right.tabs .tab-item, .tabs-icon-right > .tabs .tab-item {
   font-size: 10px; }
-  .tabs-icon-left.tabs .tab-item .icon, .tabs-icon-left > .tabs .tab-item .icon, .tabs-icon-right.tabs .tab-item .icon, .tabs-icon-right > .tabs .tab-item .icon {
+  .tabs-icon-left.tabs .tab-item .icon, .tabs-icon-left.tabs .tab-item .tab-title, .tabs-icon-left > .tabs .tab-item .icon, .tabs-icon-left > .tabs .tab-item .tab-title, .tabs-icon-right.tabs .tab-item .icon, .tabs-icon-right.tabs .tab-item .tab-title, .tabs-icon-right > .tabs .tab-item .icon, .tabs-icon-right > .tabs .tab-item .tab-title {
     display: inline-block;
     vertical-align: top;
     margin-top: -0.1em; }
-    .tabs-icon-left.tabs .tab-item .icon:before, .tabs-icon-left > .tabs .tab-item .icon:before, .tabs-icon-right.tabs .tab-item .icon:before, .tabs-icon-right > .tabs .tab-item .icon:before {
+    .tabs-icon-left.tabs .tab-item .icon:before, .tabs-icon-left.tabs .tab-item .tab-title:before, .tabs-icon-left > .tabs .tab-item .icon:before, .tabs-icon-left > .tabs .tab-item .tab-title:before, .tabs-icon-right.tabs .tab-item .icon:before, .tabs-icon-right.tabs .tab-item .tab-title:before, .tabs-icon-right > .tabs .tab-item .icon:before, .tabs-icon-right > .tabs .tab-item .tab-title:before {
       font-size: 24px;
       line-height: 49px; }
 
@@ -4621,7 +4626,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   transition: 0.2s opacity linear;
   visibility: hidden;
   opacity: 0; }
-  .loading-container:not(.visible) .icon {
+  .loading-container:not(.visible) .icon, .loading-container:not(.visible) .spinner {
     display: none; }
   .loading-container.visible {
     visibility: visible; }
@@ -4790,7 +4795,7 @@ a.item {
   z-index: 2;
   padding: 16px 49px 16px 16px;
   border: none;
-  background-color: white; }
+  background-color: #fff; }
 
 a.item-content {
   display: block;
@@ -6986,6 +6991,9 @@ a.button {
     border-right-width: 1px;
     border-radius: 0px 2px 2px 0px; }
 
+.button-bar > .button-small:before, .button-bar > .button-small .icon:before {
+  line-height: 28px; }
+
 /**
  * Grid
  * --------------------------------------------------
@@ -7527,6 +7535,16 @@ a.button {
   top: 113px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-subheader.has-tabs-top {
   top: 157px; }
+.platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader) {
+  height: 44px; }
+  .platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper {
+    margin-top: -1px; }
+  .platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader) > * {
+    margin-top: 0; }
+.platform-ios.platform-cordova .popover .has-header, .platform-ios.platform-cordova .popover .bar-subheader {
+  top: 44px; }
+.platform-ios.platform-cordova .popover .has-subheader {
+  top: 88px; }
 .platform-ios.platform-cordova.status-bar-hide {
   margin-bottom: 20px; }
 
@@ -7813,28 +7831,32 @@ a.button {
   padding: 10%; }
   .welcome-screen .ws-logo-subtitle {
     font-weight: bold;
+    font-family: 'Open Sans';
     font-size: 18px;
     margin-top: 10px;
     color: #757575; }
   .welcome-screen .ws-navigation, .welcome-screen .ws-language {
+    color: #757575;
     font-size: 16px;
     color: #3e3e3e;
     display: inline-block;
     width: 100%; }
   .welcome-screen .ws-navigation-header {
-    font-weight: 600; }
+    font-weight: bold;
+    color: #757575;
+    font-size: 18px;
+    margin-bottom: 20px; }
   .welcome-screen .ws-navigation-description {
     font-weight: 300; }
   .welcome-screen .ws-language {
-    padding-top: 20px;
-    height: 15vh; }
+    height: 21vh; }
   .welcome-screen .ws-language-buttons {
     text-transform: uppercase; }
     .welcome-screen .ws-language-buttons .ws-change-language {
       border-radius: 50%;
       font-size: 14px;
-      width: 55px;
-      height: 55px;
+      width: 57px;
+      height: 57px;
       background-color: #fff;
       border-color: #3e3e3e;
       position: relative; }
@@ -7850,42 +7872,25 @@ a.button {
           font-weight: 600; }
       .welcome-screen .ws-language-buttons .ws-change-language span {
         position: relative; }
-  .welcome-screen .ws-border-bottom {
-    border-bottom: 1px solid #757575;
-    padding: 10px 0;
-    margin-top: 10px; }
 
 .ws-logo {
-  height: 26vh;
+  height: 30vh;
   display: inline-block;
   width: 100%; }
   .ws-logo img {
-    width: 50%;
+    width: 60%;
     height: auto; }
 
 .ws-navigation {
-  height: 30vh; }
-  .ws-navigation .ws-naviagation-left {
-    position: relative; }
-  .ws-navigation .ws-button-left {
-    background: url(../img/welcome_screen_chevron_left.svg) no-repeat;
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 20%;
-    border: none; }
-  .ws-navigation .ws-naviagation-right {
-    position: relative; }
-  .ws-navigation .ws-button-right {
-    display: block;
-    width: 23px;
-    height: 40px;
-    position: absolute;
-    top: 20%;
-    right: 0;
-    background: url(../img/welcome_screen_chevron_right.svg) no-repeat;
-    border: none; }
+  height: 27vh; }
+  .ws-navigation--list {
+    list-style: disc;
+    text-align: left;
+    margin-left: 20px; }
+    .ws-navigation--list li {
+      margin: 10px 0;
+      line-height: 26px;
+      color: #757575; }
 
 .ws-button {
   padding: 15px 0 0 0;
@@ -7902,7 +7907,9 @@ a.button {
   text-align: center; }
 
 .bar-header {
-  background-color: #fff; }
+  background-color: #fff;
+  height: 48px;
+  background-image: none; }
 
 .item-kazimir {
   padding: 0;
@@ -7987,15 +7994,16 @@ a.button {
   vertical-align: middle; }
 
 .toggle-button {
-  background: url(../img/flip.svg) no-repeat;
   background-size: 48px;
   width: 50px;
   height: 50px;
   border-radius: 50%; }
   .toggle-button.old {
-    background-color: #d8c542; }
+    background: url(../img/Button-1.png) no-repeat;
+    background-size: 100%; }
   .toggle-button.new {
-    background-color: #40a9bc; }
+    background: url(../img/Button-2.png) no-repeat;
+    background-size: 100%; }
 
 .angular-google-map-container {
   min-height: 400px;

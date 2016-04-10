@@ -216,12 +216,14 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
   padding: 10%;
   .ws-logo-subtitle {
     font-weight: bold;
+    font-family: 'Open Sans';
     font-size: 18px;
     margin-top: 10px;
     color: $graylogo;
   }
   .ws-navigation,
   .ws-language {
+    color: $graylogo;
     font-size: 16px;
     color: $basedark;
     display: inline-block;
@@ -229,22 +231,24 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
   }
 
   .ws-navigation-header {
-    font-weight: 600;
+    font-weight: bold;
+    color: $graylogo;
+    font-size: 18px;
+    margin-bottom: 20px;
   }
   .ws-navigation-description {
     font-weight: 300;
   }
   .ws-language {
-    padding-top: 20px;
-    height: 15vh;
+    height: 21vh;
   }
   .ws-language-buttons {
     text-transform: uppercase;
     .ws-change-language {
       border-radius: 50%;
       font-size: 14px;
-      width: 55px;
-      height: 55px;
+      width: 57px;
+      height: 57px;
       background-color: $light;
       border-color: $basedark;
       position: relative;
@@ -267,47 +271,28 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
       }
     }
   }
-  .ws-border-bottom {
-    border-bottom: 1px solid $graylogo;
-    padding: 10px 0;
-    margin-top: 10px;
-  }
+
 }
 .ws-logo {
-  height: 26vh;
+  height: 30vh;
   display: inline-block;
   width: 100%;
   img {
-    width: 50%;
+    width: 60%;
     height: auto;
   }
 }
 .ws-navigation {
-  height: 30vh;
-  .ws-naviagation-left {
-    position: relative;
-  }
-  .ws-button-left {
-    background: url(../img/welcome_screen_chevron_left.svg) no-repeat;
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 20%;
-    border: none;
-  }
-  .ws-naviagation-right {
-    position: relative;
-  }
-  .ws-button-right {
-    display: block;
-    width: 23px;
-    height: 40px;
-    position: absolute;
-    top: 20%;
-    right: 0;
-    background: url(../img/welcome_screen_chevron_right.svg) no-repeat;
-    border: none;
+  height: 27vh;
+  &--list {
+    list-style: disc;
+    text-align: left;
+    margin-left: 20px;
+    li {
+      margin: 10px 0;
+      line-height: 26px;
+      color: $graylogo;
+    }
   }
 }
 .ws-button {
@@ -331,6 +316,8 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
 //LIST VIEW
 .bar-header {
   background-color: $light;
+  height: 48px;
+  background-image: none;
 }
 .item-kazimir {
   padding: 0;
@@ -429,16 +416,18 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
   vertical-align: middle;
 }
 .toggle-button {
-  background: url(../img/flip.svg) no-repeat;
   background-size: 48px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+
   &.old {
-    background-color: $baseold;
+    background: url(../img/Button-1.png) no-repeat;
+    background-size: 100%;
   }
   &.new {
-    background-color: $basenew;
+    background: url(../img/Button-2.png) no-repeat;
+    background-size: 100%;
   }
 }
 

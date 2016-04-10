@@ -6,22 +6,17 @@
 	    	<h3 class="ws-logo-subtitle ws-border-bottom">{{"sub_title" | translate}}</h3>
 	    </div>
 	    <div class="ws-navigation">
-	    	<div class="ws-naviagation-left ws-border-bottom">
-	    		<!-- <a class="ws-button-left" nav-direction='enter' href='#/list-view'></a> -->
-	    		<p class="ws-navigation-header">{{"nav_left" | translate}}</p>
-	    		<p class="ws-navigation-description">{{"discover_past" | translate}}</p>
-	    	</div>
-	    	<div class="ws-naviagation-right ws-border-bottom">
-	    		<p class="ws-navigation-header">{{"nav_right" | translate}}</p>
-	    		<p class="ws-navigation-description">{{"discover_present" | translate}}</p>
-	    		<!-- <a class="ws-button-right" nav-direction='enter' href='#/list-view'></a> -->
-	    	</div>
+        <ul class="ws-navigation--list">
+          <li>{{"nav_left" | translate}} {{"discover_past" | translate}}</li>
+          <li>{{"nav_right" | translate}} {{"discover_present" | translate}}</li>
+          <li>{{"click_reverse" | translate}}</li>
+        </ul>
 	    </div>
 	    <div class="ws-language">
-	    	<!--<p class="ws-navigation-header">{{"language" | translate}}</p> -->
+	    	<p class="ws-navigation-header">{{"language" | translate}}</p>
 	    	<div class="ws-language-buttons">
-	    		<button class='button ws-change-language ws-language-en' ng-class="{active: lang == 'en'}" ng-click="setLanguage('en');"><span>eng</span></button>
-	    		<button class='button ws-change-language ws-language-pl' ng-class="{active: lang == 'pl'}" ng-click="setLanguage('pl');"><span>pl</span></button>
+	    		<button class='button ws-change-language ws-language-en' ng-class="{active: lang == 'en'}" ng-click="setLanguage('en');"><span>ENG</span></button>
+	    		<button class='button ws-change-language ws-language-pl' ng-class="{active: lang == 'pl'}" ng-click="setLanguage('pl');"><span>PL</span></button>
 	    	</div>
 	    </div>
 	    <div class="ws-button">
