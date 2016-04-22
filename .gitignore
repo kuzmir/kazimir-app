@@ -7,3 +7,4 @@ plugins/
 www/lib/
 my-release-key.keystore
 Kazimir.apk
+config.xml
