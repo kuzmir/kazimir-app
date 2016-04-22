@@ -1,0 +1,41 @@
+//SINGLE ITEM
+
+.single-content {
+  color: $basefontgray;
+  background: #fff;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.sc-container {
+  padding: 20px;
+  text-align: left;
+}
+.bar {
+  .button,
+  .title {
+    color: $light;
+  }
+
+}
+.bar-header {
+  &.new {
+    background-color: $basenew;
+    .button {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      bottom: 5px;
+    }
+  }
+  &.old {
+    background-color: $baseold;
+    .button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+    }
+  }
+}

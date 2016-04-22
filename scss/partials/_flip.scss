@@ -1,0 +1,57 @@
+.flipper {
+  -webkit-perspective: 1000;
+     -moz-perspective: 1000;
+       -o-perspective: 1000;
+          perspective: 1000;
+}
+
+.flipper .container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.8s;
+     -moz-transition: -moz-transform 0.8s;
+       -o-transition: -o-transform 0.8s;
+          transition: transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+
+}
+
+.flipper .container {
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+         -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+
+}
+
+.flipper .container .front {
+  z-index: 2;
+  -webkit-transform: rotateY( 0deg );
+     -moz-transform: rotateY( 0deg );
+       -o-transform: rotateY( 0deg );
+          transform: rotateY( 0deg );
+}
+
+.flipper .container .back {
+  -webkit-transform: rotateY( 180deg );
+     -moz-transform: rotateY( 180deg );
+       -o-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+}
+
+.flipper .container.flipped {
+  -webkit-transform: rotateY( -180deg );
+     -moz-transform: rotateY( -180deg );
+       -o-transform: rotateY( -180deg );
+          transform: rotateY( -180deg );
+}

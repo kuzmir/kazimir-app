@@ -1,0 +1,104 @@
+// Welcome screen
+.welcome-screen {
+  text-align: center;
+  height: 100%;
+  position: relative;
+  padding: 10%;
+  .ws-logo-subtitle {
+    font-weight: bold;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    margin-top: 10px;
+    color: $graylogo;
+  }
+  .ws-navigation,
+  .ws-language {
+    color: $graylogo;
+    font-size: 16px;
+    color: $basedark;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .ws-navigation-header {
+    font-weight: bold;
+    color: $graylogo;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .ws-navigation-description {
+    font-weight: 300;
+  }
+  .ws-language {
+    height: 21vh;
+  }
+  .ws-language-buttons {
+    text-transform: uppercase;
+    .ws-change-language {
+      border-radius: 50%;
+      font-size: 14px;
+      width: 57px;
+      height: 57px;
+      background-color: $light;
+      border-color: $basedark;
+      position: relative;
+      &.ws-language-en {
+        right: 10px;
+      }
+      &.ws-language-pl {
+        left: 10px;
+      }
+      &.active {
+        background-color: $baseold;
+        border-color: $baseold;
+        span {
+          color: $light;
+          font-weight: 600;
+        }
+      }
+      span {
+        position: relative;
+      }
+    }
+  }
+
+}
+.ws-logo {
+  height: 30vh;
+  display: inline-block;
+  width: 100%;
+  img {
+    width: 60%;
+    height: auto;
+  }
+}
+.ws-navigation {
+  height: 27vh;
+  &--list {
+    list-style: disc;
+    text-align: left;
+    margin-left: 20px;
+    li {
+      margin: 10px 0;
+      line-height: 26px;
+      color: $graylogo;
+    }
+  }
+}
+.ws-button {
+  padding: 15px 0 0 0;
+  height: 20vh;
+  .ws-gotit {
+    width: 100%;
+    background-color: $basenew;
+    color: $light;
+  }
+}
+
+
+.ws-loading-error{
+  padding: 10px 0 0 0;
+  font-size: 10px;
+  color: #c00;
+  text-align: center;
+}

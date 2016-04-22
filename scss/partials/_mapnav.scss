@@ -1,0 +1,21 @@
+// List on the map view
+
+.m-button-container {
+  bottom: 14%;
+  z-index: 0;
+  .open-map-list {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    background-color: rgba(224, 224, 224, 0.8);
+    .icon {
+      top: 2px;
+      left: 1px;
+      position: relative;
+      color: #565656;
+    }
+  }
+  &.active {
+    bottom: 38%;
+  }
+}

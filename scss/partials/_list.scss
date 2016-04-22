@@ -1,0 +1,91 @@
+//LIST VIEW
+.bar-header {
+  background-color: $light;
+  height: 48px;
+  background-image: none;
+}
+.item-kazimir {
+  padding: 0;
+  position: relative;
+  min-height: 200px;
+  height: 35vh;
+  border: none;
+  .street-item {
+    height: 100%;
+    text-align: center;
+    .button {
+      min-height: 30px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      color: $light;
+      font-size: 30px;
+      &:before {
+        position:relative;
+        bottom: 6px;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .street-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .4;
+    background-image: -ms-linear-gradient(top left, #323232 0%, #000000 100%);
+    background-image: -moz-linear-gradient(top left, #323232 0%, #000000 100%);
+    background-image: -o-linear-gradient(top left, #323232 0%, #000000 100%);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #323232), color-stop(1, #000000));
+    background-image: -webkit-linear-gradient(top left, #323232 0%, #000000 100%);
+    background-image: linear-gradient(to bottom right, #323232 0%, #000000 100%);
+  }
+  .street-click-mask-old {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+  }
+  .street-click-mask-new {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+.list-item-buttons {
+  position: relative;
+  top: 45%;
+  // margin: 0 10px;
+  .button {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    &.ion-chevron-left {
+      left: 10px;
+    }
+    &.ion-chevron-right {
+      right: 10px;
+    }
+  }
+}
+.item-name {
+  width: 100%;
+  font-weight: bold;
+  color: $light;
+  font-size: 7vw;
+  position: relative;
+  top: 5px;
+}
