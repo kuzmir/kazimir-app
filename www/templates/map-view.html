@@ -18,13 +18,9 @@
       </ui-gmap-google-map>
     </div>
     <div ng-controller="MapStreetsController">
-      <div ng-if="selectedItem" class="item-label">
-        <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(selectedItem)"></a>
-        <div class="selected-item">{{selectedItem.name}}</div>
-        <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(selectedItem)"></a>
-      </div>
+
       <ion-content delegate-handle="mapScroll" ng-class="class" class="map-street-list">
-        <div ng-if="!selectedItem" class='map-item-kazimir' ng-click='openMapList()'>
+        <div class='map-item-kazimir'>
             <div class="map-street-item">
               <div class="list-item-buttons">
                 <div ng-model="item" class="map-item-name">
@@ -33,19 +29,27 @@
               </div>
             </div>
         </div>
-        <div ng-if="!selectedItem" class='map-item-kazimir' ng-repeat='street in streets'>
+        <div class='map-item-kazimir' ng-repeat='street in streets'>
             <div class="map-street-item">
               <div class="list-item-buttons">
-                <div ng-model="item" class="map-item-name">
-                  <span ng-click="streetSelected(street)">{{street.name}}</span>
+                <div ng-model="item" class="map-item-name" ng-class="{'selected':street === selectedItem}">
+                  <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(selectedItem)"></a>
+                  <span class="map-scroll-item-name" ng-click="streetSelected(street)">{{street.name}}</span>
+                  <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(selectedItem)"></a>
                 </div>
+
+                <!-- <div ng-if="selectedItem" class="item-label">
+                  <a class="button button-icon ion-chevron-left" nav-direction="back" ng-click="singlePostOld(selectedItem)"></a>
+                  <div class="selected-item">{{selectedItem.name}}</div>
+                  <a class="button button-icon ion-chevron-right" nav-direction="forward" ng-click="singlePostNew(selectedItem)"></a>
+                </div> -->
               </div>
             </div>
         </div>
       </ion-content>
-      <div ng-class="class" class='button-container m-button-container'>
+      <!-- <div ng-class="class" class='button-container m-button-container'>
         <a class='button button-icon open-map-list' ng-click='openMapList()'><i class="icon ion-more"></i></a>
-      </div>
+      </div> -->
     </div>
   </ion-content>
 </ion-view>

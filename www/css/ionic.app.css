@@ -8042,6 +8042,13 @@ a.button {
     width: 100%;
     text-align: center;
     margin: 10px 0; }
+    .map-street-item .map-item-name a {
+      display: none; }
+    .map-street-item .map-item-name.selected .map-scroll-item-name {
+      color: #40a9bc;
+      font-weight: bold; }
+    .map-street-item .map-item-name.selected .button-icon {
+      display: block; }
 
 .item-label {
   width: 100%;

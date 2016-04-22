@@ -13,7 +13,7 @@ angular.module('kazimir')
     $scope.streets = streets;
 
   });
-  
+
   // on click go to past single view
   $scope.singlePostOld = function($index) {
     $ionicViewSwitcher.nextDirection('back');
@@ -32,37 +32,24 @@ angular.module('kazimir')
     $rootScope.activeView = "new";
     $state.go('single-new');
   };
-  
+
   var delegate = $ionicScrollDelegate.$getByHandle('mapScroll');
 
   $timeout(function() {
-    delegate.freezeScroll(true);
+    delegate.freezeScroll(false);
   }, 1000);
 
-  $scope.class = "closed";
- 
-  $scope.openMapList = function() {
-    if ($scope.class === "closed") {
-      $scope.class = "active";
-      $scope.selectedItem = false;
-      delegate.freezeScroll(false);     
-    }else {
-      $scope.class = "closed";
-      delegate.freezeScroll(true);
-    }
-  };
-  
+  $scope.class = "active";
+  $scope.selectedItem = false;
+
   $scope.selectedItem = "";
+
   $scope.streetSelected = function($index){
-    if ($scope.class === "active") {
-      $scope.class = "closed";
-      delegate.freezeScroll(true);
-    }
     $scope.selectedItem = $index;
     $rootScope.$emit('streetSelected', $scope.selectedItem);
     return $scope.selectedItem;
   };
-  
+
   $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };

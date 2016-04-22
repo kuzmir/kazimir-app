@@ -32,7 +32,7 @@ angular.module('kazimir')
       weight: 3
     },
     selectedStroke: {
-      color: '#6060FB',
+      color: '#40a9bc',
       weight: 3
     }
   }

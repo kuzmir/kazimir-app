@@ -474,6 +474,18 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
     width: 100%;
     text-align: center;
     margin: 10px 0;
+    a {
+      display: none;
+    }
+    &.selected {
+      .map-scroll-item-name {
+        color: $basenew;
+        font-weight: bold;
+      }
+      .button-icon {
+        display: block;
+      }
+    }
   }
 }
 .item-label {
