@@ -7,7 +7,7 @@
     </div>
     <ion-scroll class="main-content" delegate-handle="singleScrollTop">
       <div class='flipper'>
-        <div class='container flipped' id='card'>
+        <div class='container' ng-class="flipClass" id='card'>
           <div class='back'>
            <div class="single-content" ng-if='activeView != "old"'>
               <div ng-repeat="present in street.places.present">

@@ -1,28 +1,33 @@
 // Header
-
-.header-logo {
-  width: 50%;
-  position: relative;
-  left: 10px;
-  img {
-    width: 75%;
+.header {
+  background-color: $light;
+  height: 48px;
+  background-image: none;
+  &__logo {
+    width: 50%;
     position: relative;
-    top: 8px;
+    left: 10px;
+    img {
+      width: 75%;
+      position: relative;
+      top: 8px;
+    }
+  }
+  &__nav {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    &--custom-icon {
+      width: 45px;
+      margin-top: 6px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }
-.header-nav {
-  position: absolute;
-  right: 10px;
-  top: 3px;
-}
-.custom-icon {
-  width: 45px;
-  margin-top: 6px;
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
+
 
 .description {
   top: 100px;

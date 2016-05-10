@@ -7906,11 +7906,6 @@ a.button {
   color: #c00;
   text-align: center; }
 
-.bar-header {
-  background-color: #fff;
-  height: 48px;
-  background-image: none; }
-
 .item-kazimir {
   padding: 0;
   position: relative;
@@ -8086,26 +8081,28 @@ a.button {
   .m-button-container.active {
     bottom: 38%; }
 
-.header-logo {
-  width: 50%;
-  position: relative;
-  left: 10px; }
-  .header-logo img {
-    width: 75%;
+.header {
+  background-color: #fff;
+  height: 48px;
+  background-image: none; }
+  .header__logo {
+    width: 50%;
     position: relative;
-    top: 8px; }
-
-.header-nav {
-  position: absolute;
-  right: 10px;
-  top: 3px; }
-
-.custom-icon {
-  width: 45px;
-  margin-top: 6px; }
-  .custom-icon img {
-    width: 100%;
-    height: auto; }
+    left: 10px; }
+    .header__logo img {
+      width: 75%;
+      position: relative;
+      top: 8px; }
+  .header__nav {
+    position: absolute;
+    right: 10px;
+    top: 3px; }
+    .header__nav--custom-icon {
+      width: 45px;
+      margin-top: 6px; }
+      .header__nav--custom-icon img {
+        width: 100%;
+        height: auto; }
 
 .description {
   top: 100px; }

@@ -18,6 +18,7 @@ angular.module('kazimir')
     $rootScope.buttonClass = "new";
     $rootScope.headerClass = "old";
     $rootScope.activeView = "old";
+    $rootScope.flipClass = "flipped";
     $state.go('single-old');
   };
 
@@ -27,6 +28,7 @@ angular.module('kazimir')
     $rootScope.buttonClass = "old";
     $rootScope.headerClass = "new";
     $rootScope.activeView = "new";
+    $rootScope.flipClass = "flipped";
     $state.go('single-new');
   };
 
@@ -34,8 +36,12 @@ angular.module('kazimir')
   $scope.rotate = function() {
     var container = document.getElementsByClassName('container');
     container = angular.element(container);
-    container.toggleClass('flipped');
     $rootScope.activeView = "";
+    if($rootScope.flipClass === "flipped") {
+      $rootScope.flipClass = "";
+    }else {
+      $rootScope.flipClass = "flipped";
+    }
     if ($rootScope.headerClass === "new") {
       $rootScope.buttonClass = "new";
       $rootScope.headerClass = "old";
@@ -47,7 +53,7 @@ angular.module('kazimir')
       $rootScope.buttonClass = "old";
       $rootScope.headerClass = "new";
       $timeout(function(){
-        $rootScope.activeView = "new"
+        $rootScope.activeView = "new";
       }, 800);
       $ionicScrollDelegate.scrollTop();
     }
