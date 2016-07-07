@@ -75,12 +75,12 @@ KazimirApp.config(function(uiGmapGoogleMapApiProvider){
 // Setup Restangular to connect to API resources
 KazimirApp.config(function(RestangularProvider) {
   // For production API should point to main server ->
-  // RestangularProvider.setBaseUrl('http://kazimirapp.pl');
+  RestangularProvider.setBaseUrl('http://kazimirapp.pl');
 
   // See: http://blog.ionic.io/handling-cors-issues-in-ionic/
   // For development we'll run through proxy /api -> http://kazimirapp.pl because of CORS
   // Uncomment line below for development on local browser
-  RestangularProvider.setBaseUrl('/api');
+  // RestangularProvider.setBaseUrl('/api');
 
   // always request JSON format
   RestangularProvider.setRequestSuffix('.json');

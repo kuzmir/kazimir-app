@@ -53,7 +53,7 @@ angular.module('kazimir')
       longitude: null
     },
     options: {
-      icon: '/img/user.png',
+      icon: 'img/user.png',
       optimized: false,
       clickable: false,
       opacity: 0.9
@@ -63,27 +63,29 @@ angular.module('kazimir')
 
   // geolocation callback to adjust pin coordinates
   var onPositionUpdate = function(pos) {
+
     $scope.userLocation.coords.latitude = pos.coords.latitude;
     $scope.userLocation.coords.longitude = pos.coords.longitude;
     $scope.userLocation.visible = true;
+
   };
 
   // handle some errors
   var onGeolocationError = function(err) {
-    console.log('Error:', err.message);
+    console.log(err.message);
   };
 
   // get location
-  $cordovaGeolocation.getCurrentPosition({
-    timeout: 30000,
-    enableHighAccuracy: false
-  }).then(onPositionUpdate, onGeolocationError);
+  var watch = $cordovaGeolocation.watchPosition({
+    timeout: 60000,
+    enableHighAccuracy: true
+  }).then(null, onGeolocationError, onPositionUpdate);
 
   // clear watch after scope of controller is destroyed
-  // $scope.$on('$destroy', function() {
-  //   if (watch) {
-  //     watch.clearWatch();
-  //   }
-  // });
+  $scope.$on('$destroy', function() {
+    if (watch) {
+      watch.clearWatch();
+    }
+  });
 
 });
