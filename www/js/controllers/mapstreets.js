@@ -21,6 +21,7 @@ angular.module('kazimir')
     $rootScope.buttonClass = "new";
     $rootScope.headerClass = "old";
     $rootScope.activeView = "old";
+    $rootScope.flipClass = "flipped";
     $state.go('single-old');
   };
 
@@ -30,6 +31,7 @@ angular.module('kazimir')
     $rootScope.buttonClass = "old";
     $rootScope.headerClass = "new";
     $rootScope.activeView = "new";
+    $rootScope.flipClass = "flipped";
     $state.go('single-new');
   };
 
