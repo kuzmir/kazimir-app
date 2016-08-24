@@ -79,7 +79,8 @@ angular.module('kazimir')
   var watch = $cordovaGeolocation.watchPosition({
     timeout: 60000,
     enableHighAccuracy: true
-  }).then(null, onGeolocationError, onPositionUpdate);
+  });
+  watch.then(null, onGeolocationError, onPositionUpdate);
 
   // clear watch after scope of controller is destroyed
   $scope.$on('$destroy', function() {
